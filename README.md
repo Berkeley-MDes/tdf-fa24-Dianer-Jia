@@ -5,37 +5,41 @@
 This week, as someone who has never used Rhino before, I downloaded Rhino and started to learn how to use it. I took Dave Schultze's Rhino 7 Essential Training course on LinkedIn to learn some basics about Rhino.
 I familiarized myself with Rhino's user interface and navigation tools, and then further started experimenting with some simple 2D and 3D graphics.
 
-![截屏2024-08-31 16.22.37.png](Week%201%20Report%201%20281541c6c19f45debac8be662b3c8533/%25E6%2588%25AA%25E5%25B1%258F2024-08-31_16.22.37.png)
+<img width="500" alt="rhino1" src="assets/rhino1.png">
 
-![截屏2024-08-31 17.15.54.png](Week%201%20Report%201%20281541c6c19f45debac8be662b3c8533/%25E6%2588%25AA%25E5%25B1%258F2024-08-31_17.15.54.png)
+<img width="500" alt="rhino2" src="assets/rhino2.png">
 
 On top of that, learn some tranformation tools like move, rotate, etc.
 
-![截屏2024-08-31 17.44.04.png](Week%201%20Report%201%20281541c6c19f45debac8be662b3c8533/%25E6%2588%25AA%25E5%25B1%258F2024-08-31_17.44.04.png)
+<img width="500" alt="rhino3" src="assets/rhino3.png">
 
-![截屏2024-08-31 17.43.32.png](Week%201%20Report%201%20281541c6c19f45debac8be662b3c8533/%25E6%2588%25AA%25E5%25B1%258F2024-08-31_17.43.32.png)
+<img width="500" alt="rhino4" src="assets/rhino4.png">
 
 I also explored some knowledge about curves, such as creating 2D graphics on curves
 
-![截屏2024-09-03 15.02.50.png](Week%201%20Report%201%20281541c6c19f45debac8be662b3c8533/%25E6%2588%25AA%25E5%25B1%258F2024-09-03_15.02.50.png)
+<img width="500" alt="rhino5" src="assets/rhino5.png">
 
 Also the use of freeform
 
-![图像9-3-24 17.55.JPG](Week%201%20Report%201%20281541c6c19f45debac8be662b3c8533/%25E5%259B%25BE%25E5%2583%258F9-3-24_17.55.jpg)
+<img width="500" alt="rhino6" src="assets/rhino6.JPG">
 
 Immediately after that, I learned about some basic surface modeling.
 For example, modeling strategies with extruding curves
 
-![截屏2024-09-03 16.07.03.png](Week%201%20Report%201%20281541c6c19f45debac8be662b3c8533/%25E6%2588%25AA%25E5%25B1%258F2024-09-03_16.07.03.png)
+<img width="500" alt="rhino7" src="assets/rhino7.png">
 
 This is the first time I've created a 3D model with two shapes, and it was a lot of fun!
 I also learned lofting surfaces
 
-![截屏2024-09-03 16.14.33.png](Week%201%20Report%201%20281541c6c19f45debac8be662b3c8533/%25E6%2588%25AA%25E5%25B1%258F2024-09-03_16.14.33.png)
+<img width="500" alt="rhino8" src="assets/rhino8.png">
 
 That's just part of what I'm learning. I think Rhino is a great software to explore. I come from a fashion design background, and during my undergraduate years I learned to use clo3d to model clothing. In the process of learning Rhino, I have discovered that the two softwares have some things in common, but Rhino is more widely used and has more attention to detail. I will keep learning some new Rhino skills every week and train more until I am proficient in this software.
 
 Also I tried laser cut today! Though everything didn't go as smooth as I think (the machine I reserved was out of order and the maker pass didn't go through that quick), I still made it! 
+
+<img width="500" alt="lasercutai" src="assets/lasercutai.png">
+
+<img width="500" alt="lasercut" src="assets/lasercut.heic">
 
 # Hello DES INV 202 Student!
 Welcome to your new GitHub repository! 
