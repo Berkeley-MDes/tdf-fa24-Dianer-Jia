@@ -39,7 +39,7 @@ Also I tried laser cut today! Though everything didn't go as smooth as I think (
 
 <img width="500" alt="lasercutai" src="assets/lasercutai.png">
 
-<img width="500" alt="lasercut" src="assets/lasercut.heic">
+<img width="500" alt="lasercutting" src="assets/lasercutting.png">
 
 # Hello DES INV 202 Student!
 Welcome to your new GitHub repository! 
