@@ -8,7 +8,7 @@ Last week, I learned some basic knowledge of Rhino modeling. This week, by learn
 
 The first basic step I learned was how to import a model from Rhino into Grasshopper. I know this might seem a bit silly, but for a beginner, that's how it is.
 
-[Image]
+<img width="1000" alt="gh1" src="connect rhino geometry to gp.png">
 
 Then, I started trying to build something simple in Grasshopper to make some preliminary changes to the model, such as rotating the model in Grasshopper:
 
@@ -26,7 +26,8 @@ Trying shear and bend:
 
 After that, I wanted to try extruding the model in Grasshopper, but I found that it didn’t work as I expected:
 
-[Video]
+Watch the video:
+[![Watch the video](https://img.youtube.com/vi/_-SPIFKRiFM/maxresdefault.jpg)](https://youtu.be/_-SPIFKRiFM)
 
 I asked ChatGPT why I couldn't use extrude on this model, and ChatGPT's answer was that extrude is used on surfaces, with the x, y, and z axes defining the direction of thickness. But this phone stand is a 3D model, so extrude cannot be used to thicken it.
 
