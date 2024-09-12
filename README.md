@@ -56,27 +56,29 @@ I first experimented with changing the parameters of the phone:
 
 Then I tried changing the parameters of the phone stand:
 
-[Video123]
+**Click & Watch the video:**
 
-[Video]
+[![Watch the video](https://img.youtube.com/vi/UtUWniQJGME/0.jpg)](https://youtu.be/UtUWniQJGME)
 
-[Video]
+[![Watch the video](https://img.youtube.com/vi/-FW1em-v9sc/0.jpg)](https://youtu.be/-FW1em-v9sc)
 
-[Screenshot]
+[![Watch the video](https://img.youtube.com/vi/Ql4sGBcGI_c/0.jpg)](https://youtu.be/Ql4sGBcGI_c)
+
+[![Watch the video](https://img.youtube.com/vi/0lNkcZkTMJY/0.jpg)](https://youtu.be/0lNkcZkTMJY)
 
 By adjusting the parameters of the phone stand, I "designed" three different phone stand models and baked them out.
 
-[Image]
+<img width="800" alt="gh2" src="assets/explore and adjust paras.png">
 
-[Image]
+<img width="800" alt="gh2" src="assets/bake 1.png">
 
-[Image]
+<img width="800" alt="gh2" src="assets/bake 1 -2.png">
 
-[Image]
+<img width="800" alt="gh2" src="assets/bake 2.png">
 
-[Image]
+<img width="800" alt="gh2" src="assets/bake 3.png">
 
-[Bake Video]
+<img width="800" alt="gh2" src="assets/bake 3-3.png">
 
 The fact that multiple designs can be made by adjusting the parameters makes me feel that Grasshopper can bring more possibilities to modeling.
 
@@ -86,51 +88,55 @@ After learning and exploring Grasshopper for the first time, I tried to create a
 
 I first created a box:
 
-[Image]
+<img width="800" alt="gh2" src="assets/3. create a box.png">
 
 Then I created a sphere and changed its position so that part of it overlaps with the box:
 
-[Image]
+<img width="800" alt="gh2" src="assets/3. create a sphere.png">
 
-[Image]
+<img width="800" alt="gh2" src="assets/3. adjust sphere position.png">
+
+<img width="800" alt="gh2" src="assets/3. adjust sphere position2.png">
 
 I first tried using solid difference and baked two models.
 
-[Image]
+<img width="800" alt="gh2" src="assets/3. use boolean - solid difference.png">
 
-[Image]
+<img width="800" alt="gh2" src="assets/3. after bake.png">
+
+<img width="800" alt="gh2" src="assets/3. after bake 2.png">
 
 Next, I tried to create a phone stand by adding a groove to place the phone. My idea was to create a slightly tilted box that overlaps with the model and then use solid difference. But I found that I couldn’t tilt the box along one edge. I asked ChatGPT, created a deconstruct brep, connected it to a list item, and locked the axis of rotation on that edge, but I still couldn’t rotate it.
 
-[Image]
+<img width="800" alt="gh2" src="assets/3. try to create void - build phone.png">
+
+<img width="800" alt="gh2" src="assets/3. try to rotate via one edge.png">
 
 ChatGPT suggested converting the axis of rotation into a point, so I used division to lock the rotation point, but it still didn’t work.
 
-[Image]
-
-[Image]
+<img width="800" alt="gh2" src="assets/3. failure - not rotating.png">
 
 So, I gave up. I decided not to tilt the box and just add the groove directly to the model. But I failed again because solid difference only has two inputs, which means I can only connect two breps, while I wanted to connect the sphere, the box, and then carve out the groove.
 
-[Image]
+<img width="800" alt="gh2" src="assets/3. failure - sphere and void to one object, not work.png">
 
 I asked ChatGPT again for help and learned a new component—merge. I merged the sphere with the box that had the groove carved out and then used solid union.
 
-[Image]
+<img width="800" alt="gh2" src="assets/3. merge the sphere and the object with void.png">
 
 Bake time!
 
-[Image]
-
-[Bake Video]
+<img width="800" alt="gh2" src="assets/3. final bake!!.png">
 
 Here is the complete form I added:
 
-[Image]
+<img width="800" alt="gh2" src="assets/the form I add.png">
 
 Final product:
 
-[Image]
+<img width="800" alt="gh2" src="assets/3. there it is!.png">
+
+<img width="800" alt="gh2" src="assets/3. there it is 2!.png">
 
 I know my model is simple, and I encountered many difficulties that I couldn’t solve by myself during the assignment. But by watching some YouTube tutorials and asking ChatGPT for better solutions, I began to gradually understand how Grasshopper assists Rhino. It allows for more flexible and convenient changes to models in Rhino. I hope I can use Grasshopper more proficiently in the future to create the models I want.
 
