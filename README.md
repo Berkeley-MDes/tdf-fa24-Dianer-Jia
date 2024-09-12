@@ -42,6 +42,8 @@ So I switched to another method by setting the surface of the model as a mesh an
 
 Through my initial exploration of Grasshopper and Rhino, I discovered some basic principles of Grasshopper, so I created a diagram to explain my understanding of these principles. Although it’s not very comprehensive, it summarizes my attempts.
 
+<img width="800" alt="gh2" src="assets/gh diagram.png">
+
 ### 2. Experiment with the files shared, manipulate the parameters and ‘bake’ some forms.
 
 After opening the 3dm and gh files of the phone stand, I began experimenting with adjusting some parameters to figure out what changes correspond to each value and to determine the shape I wanted.
