@@ -28,7 +28,7 @@ After that, I wanted to try extruding the model in Grasshopper, but I found that
 
 **Click & Watch the video:**
 
-[![Watch the video](https://img.youtube.com/vi/_-SPIFKRiFM/maxresdefault.jpg)](https://youtu.be/_-SPIFKRiFM)
+[![Watch the video](https://img.youtube.com/vi/_-SPIFKRiFM/0.jpg)](https://youtu.be/_-SPIFKRiFM)
 
 I asked ChatGPT why I couldn't use extrude on this model, and ChatGPT's answer was that extrude is used on surfaces, with the x, y, and z axes defining the direction of thickness. But this phone stand is a 3D model, so extrude cannot be used to thicken it.
 
@@ -38,7 +38,7 @@ So I switched to another method by setting the surface of the model as a mesh an
 
 **Click & Watch the video:**
 
-[![Watch the video](https://img.youtube.com/vi/RsaaJbQGdVQ/maxresdefault.jpg)](https://youtu.be/RsaaJbQGdVQ)
+[![Watch the video](https://img.youtube.com/vi/RsaaJbQGdVQ/0.jpg)](https://youtu.be/RsaaJbQGdVQ)
 
 Through my initial exploration of Grasshopper and Rhino, I discovered some basic principles of Grasshopper, so I created a diagram to explain my understanding of these principles. Although it’s not very comprehensive, it summarizes my attempts.
 
