@@ -1,3 +1,138 @@
+# Week 2: Report 2
+
+Week of 09/12/2024
+
+### 1.Make diagrams of the example files shared.
+
+Last week, I learned some basic knowledge of Rhino modeling. This week, by learning the principles of Grasshopper in class, I began to try using Grasshopper and Rhino together.
+
+The first basic step I learned was how to import a model from Rhino into Grasshopper. I know this might seem a bit silly, but for a beginner, that's how it is.
+
+[Image]
+
+Then, I started trying to build something simple in Grasshopper to make some preliminary changes to the model, such as rotating the model in Grasshopper:
+
+[Image]
+
+And moving it:
+
+[Image]
+
+Trying shear and bend:
+
+[Image]
+
+[Image]
+
+After that, I wanted to try extruding the model in Grasshopper, but I found that it didn’t work as I expected:
+
+[Video]
+
+I asked ChatGPT why I couldn't use extrude on this model, and ChatGPT's answer was that extrude is used on surfaces, with the x, y, and z axes defining the direction of thickness. But this phone stand is a 3D model, so extrude cannot be used to thicken it.
+
+So I switched to another method by setting the surface of the model as a mesh and then connecting amplitude to adjust the thickness.
+
+[Image]
+
+[Video]
+
+Through my initial exploration of Grasshopper and Rhino, I discovered some basic principles of Grasshopper, so I created a diagram to explain my understanding of these principles. Although it’s not very comprehensive, it summarizes my attempts.
+
+### 2. Experiment with the files shared, manipulate the parameters and ‘[bake](https://hopific.com/how-to-bake-in-grasshopper/)’ some forms.
+
+After opening the 3dm and gh files of the phone stand, I began experimenting with adjusting some parameters to figure out what changes correspond to each value and to determine the shape I wanted.
+
+I first experimented with changing the parameters of the phone:
+
+[Video123]
+
+[Video]
+
+[Video]
+
+Then I tried changing the parameters of the phone stand:
+
+[Video123]
+
+[Video]
+
+[Video]
+
+[Screenshot]
+
+By adjusting the parameters of the phone stand, I "designed" three different phone stand models and baked them out.
+
+[Image]
+
+[Image]
+
+[Image]
+
+[Image]
+
+[Image]
+
+[Bake Video]
+
+The fact that multiple designs can be made by adjusting the parameters makes me feel that Grasshopper can bring more possibilities to modeling.
+
+### 3. Experiment with generating your own basic model of a form using Grasshopper.
+
+After learning and exploring Grasshopper for the first time, I tried to create a model myself. I haven’t fully learned how to replace the spheres in the model with other geometric shapes, but I tried using Boolean operations to combine two geometric shapes to create a model.
+
+I first created a box:
+
+[Image]
+
+Then I created a sphere and changed its position so that part of it overlaps with the box:
+
+[Image]
+
+[Image]
+
+I first tried using solid difference and baked two models.
+
+[Image]
+
+[Image]
+
+Next, I tried to create a phone stand by adding a groove to place the phone. My idea was to create a slightly tilted box that overlaps with the model and then use solid difference. But I found that I couldn’t tilt the box along one edge. I asked ChatGPT, created a deconstruct brep, connected it to a list item, and locked the axis of rotation on that edge, but I still couldn’t rotate it.
+
+[Image]
+
+ChatGPT suggested converting the axis of rotation into a point, so I used division to lock the rotation point, but it still didn’t work.
+
+[Image]
+
+[Image]
+
+So, I gave up. I decided not to tilt the box and just add the groove directly to the model. But I failed again because solid difference only has two inputs, which means I can only connect two breps, while I wanted to connect the sphere, the box, and then carve out the groove.
+
+[Image]
+
+I asked ChatGPT again for help and learned a new component—merge. I merged the sphere with the box that had the groove carved out and then used solid union.
+
+[Image]
+
+Bake time!
+
+[Image]
+
+[Bake Video]
+
+Here is the complete form I added:
+
+[Image]
+
+Final product:
+
+[Image]
+
+I know my model is simple, and I encountered many difficulties that I couldn’t solve by myself during the assignment. But by watching some YouTube tutorials and asking ChatGPT for better solutions, I began to gradually understand how Grasshopper assists Rhino. It allows for more flexible and convenient changes to models in Rhino. I hope I can use Grasshopper more proficiently in the future to create the models I want.
+
+---
+
+
 # Week 1: Report 1
 
 ## Week of 09/05/2024
