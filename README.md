@@ -42,17 +42,17 @@ So I switched to another method by setting the surface of the model as a mesh an
 
 Through my initial exploration of Grasshopper and Rhino, I discovered some basic principles of Grasshopper, so I created a diagram to explain my understanding of these principles. Although it’s not very comprehensive, it summarizes my attempts.
 
-### 2. Experiment with the files shared, manipulate the parameters and ‘[bake](https://hopific.com/how-to-bake-in-grasshopper/)’ some forms.
+### 2. Experiment with the files shared, manipulate the parameters and ‘bake’ some forms.
 
 After opening the 3dm and gh files of the phone stand, I began experimenting with adjusting some parameters to figure out what changes correspond to each value and to determine the shape I wanted.
 
 I first experimented with changing the parameters of the phone:
 
-[Video123]
+**Click & Watch the video:**
 
-[Video]
+[![Watch the video](https://img.youtube.com/vi/T2pt9rDimW4/0.jpg)](https://youtu.be/T2pt9rDimW4)
 
-[Video]
+[![Watch the video](https://img.youtube.com/vi/2hj6hMg86AQ/0.jpg)](https://youtu.be/2hj6hMg86AQ)
 
 Then I tried changing the parameters of the phone stand:
 
