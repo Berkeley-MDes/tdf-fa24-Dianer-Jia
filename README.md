@@ -46,11 +46,11 @@ Next, I created a polygon, extruded it to the desired height, moved it to the id
 
 To ensure the phone could be properly supported, I had to make sure the cheese was positioned correctly. With the phone case, the phone's thickness is 1.2mm. After multiple measurements, I found a simpler method by using Rhino’s Distance tool to simulate the phone’s placement.
 
-<img width="800" alt="project1-4" src="distance to measure.png">
+<img width="500" alt="project1-4" src="distance to measure.png">
 
 To provide better support for the phone, I added another triangular prism to the top of the cellphone stand (even though I wasn’t sure if it would work). So I created another polygon. However, to meet different support needs, I used Scale NU to adjust the lengths of the polygon’s sides, making it no longer an equilateral triangle. After extruding, rotating, and other operations, I baked the model and performed a Boolean Union in Rhino. This is my final model.
 
-<img width="800" alt="project1-5" src="find model.png">
+<img width="800" alt="project1-5" src="final model.png">
 
 Showcase of the 3D print
 
