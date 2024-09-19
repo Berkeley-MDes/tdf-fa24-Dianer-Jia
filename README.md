@@ -40,7 +40,7 @@ I then 3D printed the second cellphone stand.
 
 **Click & Watch the video:**
 
-[![Watch the video](https://img.youtube.com/vi/UtUWniQJGME/0.jpg)](https://youtu.be/UtUWniQJGME)
+[![Watch the video](https://img.youtube.com/vi/Vkp2nEFAqgk/0.jpg)](https://youtu.be/Vkp2nEFAqgk)
 
 However, I felt the process was becoming repetitive, so I wanted to challenge myself by creating a more complex design. As someone with a design background, I tend not to focus solely on structural complexity, but more on the design itself. I wanted to keep the cheese-inspired design but change the way the stand provides support.
 
