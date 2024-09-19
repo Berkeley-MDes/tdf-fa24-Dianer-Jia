@@ -1,3 +1,55 @@
+# Week 3: Report 3
+
+Week of 09/19/2024
+
+### 
+
+This week, I have been working on Project 1.
+
+I created a total of three cellphone stands. In the first cellphone stand design, I mainly built a box and then added several spheres. By adjusting the positions of the spheres to achieve the desired effect, I used Solid Union to combine them and then carved out a groove.
+
+(Insert video)
+
+Next, I used a 3D printer for the first time to print out this model.
+
+(Insert 3D printing video)
+
+An interesting aspect of the design process was that I considered user convenience. I created a spherical hole to store earphones and a hollow sphere to allow the charging cable to pass through. However, it became clear that the charging feature did not work well.
+
+(Insert picture)
+
+(Insert video)
+
+So, I decided to improve the model. Based on feedback from my classmates, I made the following adjustments: I built another box to provide support for the back of the phone; I raised the groove by changing its position along the Z-axis to make it higher, better accommodating the charging cable; I also extended the hole for the charging cable all the way to the bottom to make it easier to use.
+
+I then 3D printed the second cellphone stand.
+
+(Insert modeling video)
+
+(Insert 3D printing video)
+
+However, I felt the process was becoming repetitive, so I wanted to challenge myself by creating a more complex design. As someone with a design background, I tend not to focus solely on structural complexity, but more on the design itself. I wanted to keep the cheese-inspired design but change the way the stand provides support.
+
+So, I redesigned the stand.
+
+(Insert sketch)
+
+I first built the basic structure of the cellphone stand using three boxes, which I merged using **Solid Union**.
+
+Next, I created a polygon, extruded it to the desired height, moved it to the ideal position, and used Cap Holes to close the geometry. To allow the triangular prism to serve as a support for the stand, I wanted to rotate it along one of its edges. I used List Item to select one edge, then used End Points and Vector 2Pt to convert the edge into an axis, which I connected to Rotate 3D for rotation. After that, I repeated my first design steps, continuously creating spheres and using Solid Difference to carve out the cheese-like shape.
+
+(Insert modeling video)
+
+To ensure the phone could be properly supported, I had to make sure the cheese was positioned correctly. With the phone case, the phone's thickness is 1.2mm. After multiple measurements, I found a simpler method by using Rhino’s Distance tool to simulate the phone’s placement.
+
+(Insert picture)
+
+To provide better support for the phone, I added another triangular prism to the top of the cellphone stand (even though I wasn’t sure if it would work). So I created another polygon. However, to meet different support needs, I used Scale NU to adjust the lengths of the polygon’s sides, making it no longer an equilateral triangle. After extruding, rotating, and other operations, I baked the model and performed a Boolean Union in Rhino. This is my final model.
+
+(Insert picture)
+
+Showcase of the 3D print
+
 # Week 2: Report 2
 
 Week of 09/12/2024
