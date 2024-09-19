@@ -46,7 +46,7 @@ However, I felt the process was becoming repetitive, so I wanted to challenge my
 
 So, I redesigned the stand.
 
-(Insert sketch)
+<img width="800" alt="project1-3" src="sketch.JPG">
 
 I first built the basic structure of the cellphone stand using three boxes, which I merged using **Solid Union**.
 
@@ -63,6 +63,8 @@ To ensure the phone could be properly supported, I had to make sure the cheese w
 To provide better support for the phone, I added another triangular prism to the top of the cellphone stand (even though I wasn’t sure if it would work). So I created another polygon. However, to meet different support needs, I used Scale NU to adjust the lengths of the polygon’s sides, making it no longer an equilateral triangle. After extruding, rotating, and other operations, I baked the model and performed a Boolean Union in Rhino. This is my final model.
 
 <img width="800" alt="project1-5" src="final model.png">
+
+<img width="800" alt="project1-5" src="phonestand showcase.png">
 
 
 
