@@ -54,7 +54,7 @@ Next, I created a polygon, extruded it to the desired height, moved it to the id
 
 **Click & Watch the video:**
 
-[![Watch the video](https://img.youtube.com/vi/UtUWniQJGME/0.jpg)](https://youtu.be/UtUWniQJGME)
+[![Watch the video](https://img.youtube.com/vi/bUB6-bJzmjM/0.jpg)](https://youtu.be/bUB6-bJzmjM)
 
 To ensure the phone could be properly supported, I had to make sure the cheese was positioned correctly. With the phone case, the phone's thickness is 1.2mm. After multiple measurements, I found a simpler method by using Rhino’s Distance tool to simulate the phone’s placement.
 
