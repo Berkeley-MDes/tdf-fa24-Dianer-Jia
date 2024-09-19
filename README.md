@@ -16,7 +16,7 @@ Next, I used a 3D printer for the first time to print out this model.
 
 An interesting aspect of the design process was that I considered user convenience. I created a spherical hole to store earphones and a hollow sphere to allow the charging cable to pass through. However, it became clear that the charging feature did not work well.
 
-<img width="800" alt="gh1" src="phonestand1.jpg">
+<img width="800" alt="gh1" src="phonestand1.JPG">
 
 <img width="800" alt="gh1" src="phonestand2.jpg">
 
