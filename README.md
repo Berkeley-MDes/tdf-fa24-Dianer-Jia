@@ -4,7 +4,7 @@
 
 For this week, I mainly focused on mapping my daily ecosystem. What I chose is to do a “Work & Productivity Ecosystem” map since I’m familiar with this and it is mainly what I’ve been doing since I started the MDes program. The followoing image is the map I created.
 
-
+<img width="800" alt="ecosystem map" src="ecosystem map.png">
 
 ### Description
 
