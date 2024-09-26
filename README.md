@@ -1,6 +1,39 @@
 # Week 3: Report 3
 
-Week of 09/19/2024
+## Week of 09/26/2024
+
+For this week, I mainly focused on mapping my daily ecosystem. What I chose is to do a “Work & Productivity Ecosystem” map since I’m familiar with this and it is mainly what I’ve been doing since I started the MDes program. The followoing image is the map I created.
+
+
+
+### Description
+
+This ecosystem map centers around the laptop as the primary device for managing work tasks and communication. It illustrates how various platforms, applications and tools—such as task management apps, calendars, cloud storage, collaborative apps, video conferencing, and a mobile phone—are interconnected.
+
+- The laptop serves as the core, where tasks are created, updated, and managed using a task management platform.
+- The calendar syncs with the task management platform, updating with deadlines and reminders, which are also accessible on the phone.
+- Cloud storage provides a backup for task data and files, making them available across devices and to the collaborative app for team collaboration.
+- Video conferencing improves real-time communication and project updates, feeding back into task management and scheduling.
+
+The feedback loops show how tasks, updates, and reminders move  between devices and platforms, enabling real-time collaboration and information sharing. This ecosystem supports productivity, ensuring tasks, deadlines, and team collaboration are organized at the same time.
+
+### Reflections
+
+Mapping my digital ecosystem helped me see how interconnected my daily tools are, particularly how information flows between platforms like cloud storage, task management, and collaborative apps. It showed me how each tool enhances overall productivity.
+
+### Speculations
+
+As AI continues to integrate into daily platforms, I think that there will be smarter management for scheduling, task prioritization, and real-time collaboration. In the future, I’ll probably dive deeper into using the more advanced features of the tools I use now, aiming to automate more tasks and make sure all the platforms work together smoothly.
+
+### Industry Insight
+
+The rise of “Super Apps” like WeChat and Alipay could transform digital ecosystems, integrating services like messaging, payments, and e-commerce into one app, potentially simplifying workflows and changing how we interact with multiple platforms now. In the future, all the platforms and applications that I mapped today may simply just combined into one app, and improve the efficiency of work and study.
+
+[News on “Super Apps”](https://www.boxo.io/blog/most-popular-superapps-in-the-world)
+
+# Week 3: Report 3
+
+## Week of 09/19/2024
 
 ### 
 
@@ -70,7 +103,7 @@ To provide better support for the phone, I added another triangular prism to the
 
 # Week 2: Report 2
 
-Week of 09/12/2024
+## Week of 09/12/2024
 
 ### 1.Make diagrams of the example files shared.
 
