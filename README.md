@@ -14,6 +14,7 @@ After creating a new project in VCS as per the tutorial, I tested the file calle
 
 When the code ran, I saw that the LED started blinking. Pressing the button changed the blinking frequency, with the periodicity being a random value between 300 and 1000.
 
+Watch the video
 [![Watch the video](https://img.youtube.com/vi/4ag49ddaypU/0.jpg)](https://youtu.be/4ag49ddaypU)
 
 I then tried changing the `periodicity` variable to a range between 100 and 2000.
@@ -22,6 +23,7 @@ I then tried changing the `periodicity` variable to a range between 100 and 2000
 
 After reconnecting the circuit, I found that this change didn’t make much difference—just that the blinking frequency changed from a random value between 300-1000 to one between 100-2000.
 
+Watch the video
 [![Watch the video](https://img.youtube.com/vi/6MM1Dsa1wFY/0.jpg)](https://youtu.be/6MM1Dsa1wFY)
 
 Next, I wanted to change the circuit. I aimed to add a button to control the entire circuit—pressing the new button would make the LED blink as per the original code, and pressing it again would turn off the LED completely. I connected a new button and resistor, with one side of the button connected to the D3 pin and the other to GND.
@@ -44,6 +46,7 @@ I then moved on to compiling and flashing the next file, `05_make_it_blink_outsi
 
 After compiling and flashing the code, I saw that both LEDs blinked simultaneously at the same frequency, with the button controlling the random speed of their blinking.
 
+Watch the video
 [![Watch the video](https://img.youtube.com/vi/YpHS383OWrI/0.jpg)](https://youtu.be/YpHS383OWrI)
 
 I then modified the code so that one LED was set to HIGH while the other was set to LOW, and vice versa.
@@ -52,6 +55,7 @@ I then modified the code so that one LED was set to HIGH while the other was set
 
 This resulted in the LEDs alternating their blink. The yellow LED (`led_out2`) stayed on longer because, in the modified code, `led_out2` in the HIGH state had no delay control.
 
+Watch the video
 [![Watch the video](https://img.youtube.com/vi/-TpIommmuXk/0.jpg)](https://youtu.be/-TpIommmuXk)
 
 I added a delay of 500 milliseconds after `digitalWrite(led_out2, HIGH)`.
@@ -60,14 +64,17 @@ I added a delay of 500 milliseconds after `digitalWrite(led_out2, HIGH)`.
 
 With this change, the yellow LED (`led_out2`) stayed on longer due to the 500 milliseconds of delay while it was in the HIGH state, while the green LED (`led_out`) remained on for only 100 milliseconds. As a result, the green LED would light up for 100 milliseconds before turning off, while the yellow LED would stay on for 500 milliseconds before turning off.
 
+Watch the video
 [![Watch the video](https://img.youtube.com/vi/v77Pw_rOwRs/0.jpg)](https://youtu.be/v77Pw_rOwRs)
 
 After this, I moved on to compiling and flashing the third file, `06_publishing_info`. In this file, I mainly observed the constantly updating information in the terminal by typing “particle serial monitor --follow.”
 
+Watch the video
 [![Watch the video](https://img.youtube.com/vi/lKnDGrc5Na0/0.jpg)](https://youtu.be/lKnDGrc5Na0)
 
 Every time I pressed the button, the rate at which the characters were generated would change randomly between 1000 and 2000 milliseconds.
 
+Watch the video
 [![Watch the video](https://img.youtube.com/vi/5Lr92vuwN94/0.jpg)](https://youtu.be/5Lr92vuwN94)
 
 I then changed the `periodicity` to 500 (I originally intended to change `void change_period(void) { periodicity = random(1000, 2000); }` but instead altered `int periodicity = 2000;`).
@@ -76,8 +83,10 @@ I then changed the `periodicity` to 500 (I originally intended to change `void c
 
 With this change, I observed that the LEDs alternated their blinking faster, and the character printing frequency in the terminal also increased.
 
+Watch the video
 [![Watch the video](https://img.youtube.com/vi/q57Cteq_nRA/0.jpg)](https://youtu.be/q57Cteq_nRA)
 
+Watch the video
 [![Watch the video](https://img.youtube.com/vi/X8qCsSHGWW0/0.jpg)](https://youtu.be/X8qCsSHGWW0)
 
 **Reflection on the Circuit and Coding System**
