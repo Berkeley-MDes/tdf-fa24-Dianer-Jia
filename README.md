@@ -14,7 +14,7 @@ After creating a new project in VCS as per the tutorial, I tested the file calle
 
 When the code ran, I saw that the LED started blinking. Pressing the button changed the blinking frequency, with the periodicity being a random value between 300 and 1000.
 
-*** Click and watch the video
+**Click & Watch the video:**
 
 [![Watch the video](https://img.youtube.com/vi/4ag49ddaypU/0.jpg)](https://youtu.be/4ag49ddaypU)
 
