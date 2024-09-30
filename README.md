@@ -6,87 +6,102 @@ This was my first time using the Photon 2, and I tried to control the LED blinki
 
 I started by setting up the circuit according to the image provided in the folder. (While matching it with the code, I noticed an error in the image—specifically, the white wire connected to the LED should be inserted into the D7 pin, not D3. I corrected this when building my circuit.)
 
-[Photo 1]
+<img width="800" alt="photon" src="p1.jpg">
 
 After creating a new project in VCS as per the tutorial, I tested the file called `04_make_it_blink`. Once I entered the code and connected my Photon, I compiled and flashed it.
 
-[Photo 2]
+<img width="800" alt="photon" src="p2.jpg">
 
 When the code ran, I saw that the LED started blinking. Pressing the button changed the blinking frequency, with the periodicity being a random value between 300 and 1000.
 
-Watch the video
+*** Click and watch the video
+
 [![Watch the video](https://img.youtube.com/vi/4ag49ddaypU/0.jpg)](https://youtu.be/4ag49ddaypU)
 
 I then tried changing the `periodicity` variable to a range between 100 and 2000.
 
-[Photo 3]
+<img width="800" alt="photon" src="p3.jpg">
 
 After reconnecting the circuit, I found that this change didn’t make much difference—just that the blinking frequency changed from a random value between 300-1000 to one between 100-2000.
 
-Watch the video
+**Click & Watch the video:**
+
 [![Watch the video](https://img.youtube.com/vi/6MM1Dsa1wFY/0.jpg)](https://youtu.be/6MM1Dsa1wFY)
 
 Next, I wanted to change the circuit. I aimed to add a button to control the entire circuit—pressing the new button would make the LED blink as per the original code, and pressing it again would turn off the LED completely. I connected a new button and resistor, with one side of the button connected to the D3 pin and the other to GND.
 
-[Photo 4]
+<img width="800" alt="photon" src="p4.jpg">
 
 Not being too sure about the coding part, I asked ChatGPT to help modify it for me.
 
-[Photos 5, 6, 7]
+<img width="800" alt="photon" src="p5.jpg">
+
+<img width="800" alt="photon" src="p6.jpg">
+
+<img width="800" alt="photon" src="p7.jpg">
 
 But I found that this new button didn’t work as I expected. I kept modifying the circuit, trying different connections, but nothing worked—the newly added button just didn’t do anything. (I also made various attempts to change the wiring, but I didn’t capture all of them; nonetheless, none achieved the desired effect.)
 
-[Photos 8, 9]
+<img width="800" alt="photon" src="p8.jpg">
+
+<img width="800" alt="photon" src="p9.jpg">
 
 After two hours of attempts, I gave up and decided to ask classmates and the teacher for help during the next class to see where the problem was.
 
 I then moved on to compiling and flashing the next file, `05_make_it_blink_outside`. Following the code, I realized I needed to connect another LED to my circuit, so I added a new LED and resistor, with one side of the LED connected to the resistor (and D3 pin) and the other to GND.
 
-[Photo 10]
+<img width="800" alt="photon" src="p10.jpg">
 
 After compiling and flashing the code, I saw that both LEDs blinked simultaneously at the same frequency, with the button controlling the random speed of their blinking.
 
-Watch the video
+**Click & Watch the video:**
+
 [![Watch the video](https://img.youtube.com/vi/YpHS383OWrI/0.jpg)](https://youtu.be/YpHS383OWrI)
 
 I then modified the code so that one LED was set to HIGH while the other was set to LOW, and vice versa.
 
-[Photo 11]
+<img width="800" alt="photon" src="p11.jpg">
 
 This resulted in the LEDs alternating their blink. The yellow LED (`led_out2`) stayed on longer because, in the modified code, `led_out2` in the HIGH state had no delay control.
 
-Watch the video
+**Click & Watch the video:**
+
 [![Watch the video](https://img.youtube.com/vi/-TpIommmuXk/0.jpg)](https://youtu.be/-TpIommmuXk)
 
 I added a delay of 500 milliseconds after `digitalWrite(led_out2, HIGH)`.
 
-[Photo 12]
+<img width="800" alt="photon" src="p12.jpg">
 
 With this change, the yellow LED (`led_out2`) stayed on longer due to the 500 milliseconds of delay while it was in the HIGH state, while the green LED (`led_out`) remained on for only 100 milliseconds. As a result, the green LED would light up for 100 milliseconds before turning off, while the yellow LED would stay on for 500 milliseconds before turning off.
 
-Watch the video
+**Click & Watch the video:**
+
 [![Watch the video](https://img.youtube.com/vi/v77Pw_rOwRs/0.jpg)](https://youtu.be/v77Pw_rOwRs)
 
 After this, I moved on to compiling and flashing the third file, `06_publishing_info`. In this file, I mainly observed the constantly updating information in the terminal by typing “particle serial monitor --follow.”
 
-Watch the video
+**Click & Watch the video:**
+
 [![Watch the video](https://img.youtube.com/vi/lKnDGrc5Na0/0.jpg)](https://youtu.be/lKnDGrc5Na0)
 
 Every time I pressed the button, the rate at which the characters were generated would change randomly between 1000 and 2000 milliseconds.
 
-Watch the video
+**Click & Watch the video:**
+
 [![Watch the video](https://img.youtube.com/vi/5Lr92vuwN94/0.jpg)](https://youtu.be/5Lr92vuwN94)
 
 I then changed the `periodicity` to 500 (I originally intended to change `void change_period(void) { periodicity = random(1000, 2000); }` but instead altered `int periodicity = 2000;`).
 
-[Photo 13]
+<img width="800" alt="photon" src="p13.jpg">
 
 With this change, I observed that the LEDs alternated their blinking faster, and the character printing frequency in the terminal also increased.
 
-Watch the video
+**Click & Watch the video:**
+
 [![Watch the video](https://img.youtube.com/vi/q57Cteq_nRA/0.jpg)](https://youtu.be/q57Cteq_nRA)
 
-Watch the video
+**Click & Watch the video:**
+
 [![Watch the video](https://img.youtube.com/vi/X8qCsSHGWW0/0.jpg)](https://youtu.be/X8qCsSHGWW0)
 
 **Reflection on the Circuit and Coding System**
