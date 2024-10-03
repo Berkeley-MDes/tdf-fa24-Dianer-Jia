@@ -142,7 +142,7 @@ After initially getting familiar with the Photon 2 and VSC (Visual Studio Code),
 
 First, I tried the Button-LED pulse rate and connected the circuit according to the diagram.
 
-<img width="800" alt="photon" src="assets/10032.jpg">
+<img width="800" alt="photon" src="10032.jpg">
 
 Every time I pressed the button, I noticed that the LED pulse rate gradually increased. However, once it reached a certain speed, it would return to the initial speed.
 
@@ -152,7 +152,7 @@ Every time I pressed the button, I noticed that the LED pulse rate gradually inc
 
 I then continued with the FSR-LED color circuit, using the FSR to change the LED color. My circuit connection is shown in the image below:
 
-<img width="800" alt="photon" src="assets/10033.jpg">
+<img width="800" alt="photon" src="10033.jpg">
 
 When I pressed the FSR with different amounts of force, the LED color would change. For example, I found that when I lightly pressed the FSR, the LED would be purple, it would turn green with more force, and become blue when pressed very hard.
 
@@ -168,11 +168,11 @@ However, the effect might not be very clear in the video, so I also checked the 
 
 Lastly, I tried the Potentiometer-OLED. The circuit connection is as shown:
 
-<img width="800" alt="photon" src="assets/10034.jpg">
+<img width="800" alt="photon" src="10034.jpg">
 
 Initially, I kept getting errors in the code. Later, I realized that it was because I hadn't properly added the `Adafruit_GFX` and `Adafruit_SSD1306` libraries from the folder, and I also hadn't included `splash.h` in the `src` directory. Once I set everything up correctly, it finally compiled successfully.
 
-<img width="800" alt="photon" src="assets/10035.jpg">
+<img width="800" alt="photon" src="10035.jpg">
 
 After connecting the circuit, I found that every time I turned the potentiometer, the OLED display would show different potentiometer values.
 
