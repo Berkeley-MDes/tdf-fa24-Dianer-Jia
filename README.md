@@ -126,6 +126,89 @@ What’s missing in my daily life is a connected system that tracks my work habi
 
 This circuit system is a lot like my work-productivity ecosystem map. Just like the Particle code uses timers to blink LEDs, my apps send notifications to drive my tasks. A button on the circuit is like clicking "done" in a task app, and the serial logs track progress similar to how a task manager does. Seeing these connections makes me think about how I could use something similar to automate parts of my daily routines, like a hardware button to log time spent on tasks or adjust my work environment.
 
+# Continue on Wednesday
+
+I tried the `03_altering_periodicity` file. I noticed that the circuit diagram shows a four-legged button, but the kit only came with a two-legged button, so I had to connect the circuit myself.
+
+WeChat Image (self-added)
+
+After compiling and flashing, I could see in the serial monitor that every time I pressed the button, the speed at which the characters printed would change. Since the `change_period` function is set between 300-1000 milliseconds, the interval between characters should randomly change within that range.
+
+**Click & Watch the video:**
+
+[![Watch the video](https://img.youtube.com/vi/6j5zCrBcRgE/0.jpg)](https://youtu.be/6j5zCrBcRgE)
+
+After initially getting familiar with the Photon 2 and VSC (Visual Studio Code), I started trying new circuit connections and new code.
+
+First, I tried the Button-LED pulse rate and connected the circuit according to the diagram.
+
+Last WeChat image
+
+Every time I pressed the button, I noticed that the LED pulse rate gradually increased. However, once it reached a certain speed, it would return to the initial speed.
+
+**Click & Watch the video:**
+
+[![Watch the video](https://img.youtube.com/vi/KUbzPDkTwKo/0.jpg)](https://youtu.be/KUbzPDkTwKo)
+
+I then continued with the FSR-LED color circuit, using the FSR to change the LED color. My circuit connection is shown in the image below:
+
+WeChat Image 1
+
+When I pressed the FSR with different amounts of force, the LED color would change. For example, I found that when I lightly pressed the FSR, the LED would be purple, it would turn green with more force, and become blue when pressed very hard.
+
+**Click & Watch the video:**
+
+[![Watch the video](https://img.youtube.com/vi/gaFPPc5Mpec/0.jpg)](https://youtu.be/gaFPPc5Mpec)
+
+However, the effect might not be very clear in the video, so I also checked the pressure values in the serial monitor to confirm the change.
+
+**Click & Watch the video:**
+
+[![Watch the video](https://img.youtube.com/vi/ktI1nUK5qLQ/0.jpg)](https://youtu.be/ktI1nUK5qLQ)
+
+Lastly, I tried the Potentiometer-OLED. The circuit connection is as shown:
+
+Initially, I kept getting errors in the code. Later, I realized that it was because I hadn't properly added the `Adafruit_GFX` and `Adafruit_SSD1306` libraries from the folder, and I also hadn't included `splash.h` in the `src` directory. Once I set everything up correctly, it finally compiled successfully.
+
+Second-to-last WeChat image
+
+After connecting the circuit, I found that every time I turned the potentiometer, the OLED display would show different potentiometer values.
+
+**Click & Watch the video:**
+
+[![Watch the video](https://img.youtube.com/vi/doICR3DRXpw/0.jpg)](https://youtu.be/doICR3DRXpw)
+
+**Differences:**
+
+1. **Inputs and Outputs**:
+    - The prior examples mainly use a button to change things like text print speed and LED flashes.
+    - The new demo projects switch it up: a button for LED pulse rate, an FSR to change LED color, and a potentiometer to adjust an OLED display.
+2. **Complexity**:
+    - The prior examples have simpler outputs (LEDs and serial messages).
+    - The new demo projects add more functionality: RGB LEDs with colors changing based on pressure and an OLED display showing variable readings.
+
+**Similarities:**
+
+1. **Input Triggers Changes**: All codes use some input (button, FSR, potentiometer) to alter outputs.
+2. **Interrupt Handling**: They all use interrupts to detect changes quickly.
+3. **Loop Structures**: Each code runs in a loop, checking for input and updating output.
+
+**Feature Expansion:**
+
+Use data to improve visualization—like sending sensor data (maybe button press count, FSR pressure, potentiometer values) to a phone app via Wi-Fi, showing real-time changes. Also, for the FSR example, adding more color gradients to represent different levels of pressure, making it more visually informative.
+
+**Most Relevant Feature:**
+
+What I’m thinking is a mood-light indicator using FSR for pressure sensing (changing colors) and a potentiometer for brightness control. Users can change the light color by using different pressure to press the FSR, and rotate the potentiometer to change the brightness of the light.
+
+**Machine Learning Role:**
+
+In my system, Machine Learning probably can predict mood based on pressure patterns, associating them with moods or stress levels. Also, based on different behaviors (like how users usually interact with the potentiometer), Machine Learning can learn from the behaviors to make the system more personalized.
+
+**Combined System Idea:**
+
+I think I can combine all the examples into a personal wellness tracker - button to switch modes, FSR for stress sensing (changing LED color), potentiometer for brightness, and OLED showing real-time feedback, insights, or maybe suggestions for users based on the stress levels.
+
 # Week 4: Report 4
 
 ## Week of 09/26/2024
