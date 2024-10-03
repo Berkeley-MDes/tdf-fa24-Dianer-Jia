@@ -130,7 +130,7 @@ This circuit system is a lot like my work-productivity ecosystem map. Just like 
 
 I tried the `03_altering_periodicity` file. I noticed that the circuit diagram shows a four-legged button, but the kit only came with a two-legged button, so I had to connect the circuit myself.
 
-WeChat Image (self-added)
+<img width="800" alt="photon" src="10:03-1.jpg">
 
 After compiling and flashing, I could see in the serial monitor that every time I pressed the button, the speed at which the characters printed would change. Since the `change_period` function is set between 300-1000 milliseconds, the interval between characters should randomly change within that range.
 
@@ -142,7 +142,7 @@ After initially getting familiar with the Photon 2 and VSC (Visual Studio Code),
 
 First, I tried the Button-LED pulse rate and connected the circuit according to the diagram.
 
-Last WeChat image
+<img width="800" alt="photon" src="assets/10:03-2.jpg">
 
 Every time I pressed the button, I noticed that the LED pulse rate gradually increased. However, once it reached a certain speed, it would return to the initial speed.
 
@@ -152,7 +152,7 @@ Every time I pressed the button, I noticed that the LED pulse rate gradually inc
 
 I then continued with the FSR-LED color circuit, using the FSR to change the LED color. My circuit connection is shown in the image below:
 
-WeChat Image 1
+<img width="800" alt="photon" src="assets/10:03-3.jpg">
 
 When I pressed the FSR with different amounts of force, the LED color would change. For example, I found that when I lightly pressed the FSR, the LED would be purple, it would turn green with more force, and become blue when pressed very hard.
 
@@ -168,9 +168,11 @@ However, the effect might not be very clear in the video, so I also checked the 
 
 Lastly, I tried the Potentiometer-OLED. The circuit connection is as shown:
 
+<img width="800" alt="photon" src="assets/10:03-4.jpg">
+
 Initially, I kept getting errors in the code. Later, I realized that it was because I hadn't properly added the `Adafruit_GFX` and `Adafruit_SSD1306` libraries from the folder, and I also hadn't included `splash.h` in the `src` directory. Once I set everything up correctly, it finally compiled successfully.
 
-Second-to-last WeChat image
+<img width="800" alt="photon" src="assets/10:03-5.jpg">
 
 After connecting the circuit, I found that every time I turned the potentiometer, the OLED display would show different potentiometer values.
 
