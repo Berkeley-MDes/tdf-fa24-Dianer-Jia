@@ -100,7 +100,7 @@ Next, I tested constraining the data. By adding `constrain()` immediately after 
 
 Based on my trials with the different functionalities of the two sensors, and applying modifications like mapping, smoothing, and constraining the data, I created this diagram:
 
-*Diagram Image*
+<img width="1200" alt="photon" src="diagram.png">
 
 # Week 5: Report 5
 
