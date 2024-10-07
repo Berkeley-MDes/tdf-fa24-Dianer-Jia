@@ -1,3 +1,107 @@
+# Week6: Report 6
+
+## Week of 10/10/2024
+
+I have compiled and flashed two Stemma-based sensor projects, focusing on the functionalities of the SparkFun APDS-9960 and MPU6050 sensors. Below are my findings and some possible alterations to experiment further with the firmware.
+
+### Initial Observations:
+
+The demo firmware primarily logs data from the sensors to the serial port, providing basic outputs for proximity values (for the APDS-9960) and accelerometer/gyroscope data (for the MPU6050).
+
+For the APDS-9960, I experimented with three different functions:
+
+**Proximity Detection:**
+
+*Circuit Image*
+
+**Click & Watch the video:**
+
+[![Watch the video](https://img.youtube.com/vi/TDx1IL7t6QM/0.jpg)](https://youtu.be/TDx1IL7t6QM)
+
+
+**Click & Watch the video:**
+Upload tmr
+[![Watch the video](https://img.youtube.com/vi/4ag49ddaypU/0.jpg)](https://youtu.be/4ag49ddaypU)
+
+
+**Color Detection Function:**
+
+*Code Image*
+
+**Click & Watch the video:**
+
+[![Watch the video](https://img.youtube.com/vi/kQVb8vn7fTA/0.jpg)](https://youtu.be/kQVb8vn7fTA)
+
+**Click & Watch the video:**
+
+[![Watch the video](https://img.youtube.com/vi/hvalschF0Ts/0.jpg)](https://youtu.be/hvalschF0Ts)
+
+
+**Gesture Detection Function:**
+
+*Code Image*
+
+**Click & Watch the video:**
+
+[![Watch the video](https://img.youtube.com/vi/4ag49ddaypU/0.jpg)](https://youtu.be/4ag49ddaypU)
+
+
+**Click & Watch the video:**
+
+[![Watch the video](https://img.youtube.com/vi/4ag49ddaypU/0.jpg)](https://youtu.be/4ag49ddaypU)
+
+
+For the MPU6050, I mainly experimented with reading data from the accelerometer sensor:
+
+*Circuit Image*
+
+**Click & Watch the video:**
+
+[![Watch the video](https://img.youtube.com/vi/XayLE98En9s/0.jpg)](https://youtu.be/XayLE98En9s)
+
+**Click & Watch the video:**
+
+[![Watch the video](https://img.youtube.com/vi/rBqov98Y5Hc/0.jpg)](https://youtu.be/rBqov98Y5Hc)
+
+
+### Mapping Sensor Values:
+
+For alterations, I tried to map the proximity sensor values to the brightness of an LED. I edited the code, but it was not functioning as expected—the LED remained either constantly on or off. Below is my code:
+
+*Code Image of Failure*
+
+I'm not sure what's causing the issue and plan to consult my professors for assistance.
+
+### Smoothing Sensor Values:
+
+I then experimented with using a low-pass filter to smooth out the sensor values.
+
+*Code Image*
+
+**Click & Watch the video:**
+
+[![Watch the video](https://img.youtube.com/vi/agA1QYLsNvc/0.jpg)](https://youtu.be/agA1QYLsNvc)
+
+
+As seen, the values became much smoother, with less jitter, which increases accuracy. I imagine that in a real-world application, this approach could be useful for controlling LED brightness, adjusting volume levels, and similar scenarios.
+
+### Constrain Sensor Values:
+
+Next, I tested constraining the data. By adding `constrain()` immediately after reading the proximity value, I ensured that the `prox` value stayed within a specified range.
+
+*Code Image*
+
+**Click & Watch the video:**
+
+[![Watch the video](https://img.youtube.com/vi/uRd_vf61o74/0.jpg)](https://youtu.be/uRd_vf61o74)
+
+
+### Diagram
+
+Based on my trials with the different functionalities of the two sensors, and applying modifications like mapping, smoothing, and constraining the data, I created this diagram:
+
+*Diagram Image*
+
 # Week 5: Report 5
 
 ## Week of 10/03/2024
