@@ -19,9 +19,9 @@ For the APDS-9960, I experimented with three different functions:
 [![Watch the video](https://img.youtube.com/vi/TDx1IL7t6QM/0.jpg)](https://youtu.be/TDx1IL7t6QM)
 
 
-***Click & Watch the video Upload tmr:***
+***Click & Watch the video***
 
-[![Watch the video](https://img.youtube.com/vi/4ag49ddaypU/0.jpg)](https://youtu.be/4ag49ddaypU)
+[![Watch the video](https://img.youtube.com/vi/09eRTcK3hXY/0.jpg)](https://youtu.be/09eRTcK3hXY)
 
 
 **Color Detection Function:**
@@ -59,9 +59,9 @@ For the MPU6050, I mainly experimented with reading data from the accelerometer 
 
 [![Watch the video](https://img.youtube.com/vi/1tzydU5YivE/0.jpg)](https://youtu.be/1tzydU5YivE)
 
-***Click & Watch the video:Upload tmr***
+***Click & Watch the video***
 
-[![Watch the video](https://img.youtube.com/vi/rBqov98Y5Hc/0.jpg)](https://youtu.be/rBqov98Y5Hc)
+[![Watch the video](https://img.youtube.com/vi/CMkUa-gAbxs/0.jpg)](https://youtu.be/CMkUa-gAbxs)
 
 
 ### Mapping Sensor Values:
@@ -101,6 +101,16 @@ Next, I tested constraining the data. By adding `constrain()` immediately after 
 Based on my trials with the different functionalities of the two sensors, and applying modifications like mapping, smoothing, and constraining the data, I created this diagram:
 
 <img width="1200" alt="photon" src="diagram.png">
+
+### Speculation
+
+In the future, I’m excited to explore how these sensors can be integrated into more interactive projects, like gesture-based controls or environmental responses. The challenges with mapping proximity values to LED brightness make me think further optimization could unlock better functionality. I’m also curious how combining the MPU6050 accelerometer with proximity detection might enhance gesture recognition. I’m eager to refine these ideas and apply what I’ve learned.
+
+### Project 2 Proposal
+
+Yingying, Xuechun and I are working on our Project 2, and here is our project [proposal](https://docs.google.com/document/d/1NTrjd6Ivd9DsqQrRy5k4kXpfnqgkJmYc25LHgkNxIuk/edit?usp=sharing).
+
+
 
 # Week 5: Report 5
 
