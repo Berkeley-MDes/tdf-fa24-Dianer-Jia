@@ -29,7 +29,7 @@ Here is my code, and the video showing the vibrator in action:
 
 ***Click & Watch the video:***
 
-[![Watch the video](https://img.youtube.com/vi/TDx1IL7t6QM/0.jpg)](https://youtu.be/TDx1IL7t6QM)
+[![Watch the video](https://img.youtube.com/vi/al2H9Px2WHI/0.jpg)](https://youtu.be/al2H9Px2WHI)
 
 Next, I connected a button and tried to control the vibrator with it to turn it on and off.
 
@@ -37,7 +37,7 @@ Next, I connected a button and tried to control the vibrator with it to turn it 
 
 ***Click & Watch the video:***
 
-[![Watch the video](https://img.youtube.com/vi/TDx1IL7t6QM/0.jpg)](https://youtu.be/TDx1IL7t6QM)
+[![Watch the video](https://img.youtube.com/vi/ku9FxEjplGw/0.jpg)](https://youtu.be/ku9FxEjplGw)
 
 Then I started working on implementing the functionality where pressing the button once makes the vibrator vibrate once; pressing it twice makes the vibrator vibrate twice with a one-second interval, and pressing it three times makes the vibrator continuously vibrate ten times with a one-second interval. I was able to quickly achieve the single and double press functionality.
 
@@ -51,7 +51,7 @@ Then I started working on implementing the functionality where pressing the butt
 
 ***Click & Watch the video:***
 
-[![Watch the video](https://img.youtube.com/vi/TDx1IL7t6QM/0.jpg)](https://youtu.be/TDx1IL7t6QM)
+[![Watch the video](https://img.youtube.com/vi/-WHGIWc8yzg/0.jpg)](https://youtu.be/-WHGIWc8yzg)
 
 However, when I tried to implement the triple press functionality, our initial expectation was for the vibrator to vibrate continuously. But no matter how I adjusted the code, I found it difficult to achieve that. So we decided to change it to vibrate continuously ten times with a one-second interval when the button is pressed three or more times.
 
@@ -65,7 +65,7 @@ However, when I tried to implement the triple press functionality, our initial e
 
 ***Click & Watch the video:***
 
-[![Watch the video](https://img.youtube.com/vi/TDx1IL7t6QM/0.jpg)](https://youtu.be/TDx1IL7t6QM)
+[![Watch the video](https://img.youtube.com/vi/Sj4WC9rcnw0/0.jpg)](https://youtu.be/Sj4WC9rcnw0)
 
 I found that although this functionality worked, it couldn't accurately distinguish between pressing the button twice and pressing it three times, so often when pressing the button three times, the vibrator would only vibrate twice. So I adjusted the code and added more delay time, making the recognition more accurate.
 
