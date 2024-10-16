@@ -1,3 +1,59 @@
+# Week 7: Report 7
+
+## week of 10/17/2024
+
+This week, our group started working on Project 2 together. Our project is called SafePair, mainly focused on safety protection and alerts for women. The basic concept is that when the button is pressed once, the LED lights green once, and the vibrator vibrates once; when pressed twice, the LED flashes yellow twice, and the vibrator vibrates in two pulses with a one-second interval; when pressed three times or more, the LED flashes red ten times, and the vibrator vibrates continuously ten times with a one-second interval. Additionally, it includes GPS tracking and an accelerometer that detects gestures to determine if the user has fallen.
+At first, we thought of building the whole system together, so I started by wiring the circuit.
+
+<img width="800" alt="project2" src="connection1.jpg">
+
+But we quickly realized that this would lead to many issues, so we decided to split it into smaller steps. I was responsible for testing the vibrator and implementing the vibration functionality.
+First, I connected the vibrator separately and tested its functionality.
+
+#include "Particle.h"
+
+const int motorPin = D3; // connect vibrator
+
+void setup() {
+pinMode(motorPin, OUTPUT); // set motorPin as output
+}
+
+void loop() {
+digitalWrite(motorPin, HIGH); // turn on vibrator
+delay(1000); // Vibrate for 1 second
+digitalWrite(motorPin, LOW);  // turn off vibrator
+delay(1000); // Pause for 1 second
+}
+
+Here is my code, and the video showing the vibrator in action:
+
+Video
+
+Next, I connected a button and tried to control the vibrator with it to turn it on and off.
+
+Code image
+
+Video
+
+Then I started working on implementing the functionality where pressing the button once makes the vibrator vibrate once; pressing it twice makes the vibrator vibrate twice with a one-second interval, and pressing it three times makes the vibrator continuously vibrate ten times with a one-second interval. I was able to quickly achieve the single and double press functionality.
+
+Code image
+
+Video
+
+However, when I tried to implement the triple press functionality, our initial expectation was for the vibrator to vibrate continuously. But no matter how I adjusted the code, I found it difficult to achieve that. So we decided to change it to vibrate continuously ten times with a one-second interval when the button is pressed three or more times.
+
+Code image
+
+Video
+
+I found that although this functionality worked, it couldn't accurately distinguish between pressing the button twice and pressing it three times, so often when pressing the button three times, the vibrator would only vibrate twice. So I adjusted the code and added more delay time, making the recognition more accurate.
+
+Code image
+
+Video
+
+After this, we plan to connect the LED and the vibrator together, integrate the code to allow one button to control both the LED and the vibrator, and test the accelerometer and GPS to complete the circuit connection.
 # Week6: Report 6
 
 ## Week of 10/10/2024
