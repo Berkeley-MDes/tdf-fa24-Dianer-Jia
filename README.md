@@ -79,7 +79,7 @@ I found that although this functionality worked, it couldn't accurately distingu
 
 ***Click & Watch the video:***
 
-[![Watch the video](https://img.youtube.com/vi/TDx1IL7t6QM/0.jpg)](https://youtu.be/TDx1IL7t6QM)
+[![Watch the video](https://img.youtube.com/vi/MgSdRU9eWZQ/0.jpg)](https://youtu.be/MgSdRU9eWZQ)
 
 After this, we plan to connect the LED and the vibrator together, integrate the code to allow one button to control both the LED and the vibrator, and test the accelerometer and GPS to complete the circuit connection.
 
