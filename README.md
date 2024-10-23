@@ -1,6 +1,803 @@
+# Week 8: Report 8
+
+## Week of 10/24/2024
+
+This week, I continued working on Project 2, focusing on achieving our goals using the Photon device.
+
+Initially, I was testing the functionality of the vibrator. After Selina successfully set up and tested the LED circuit and code, I began working on integrating the vibrator and LED together, combining our codes to make the LED and vibrator function simultaneously. The result was: pressing the button once caused the green LED to flash once and the vibrator to vibrate once; pressing the button twice caused the yellow LED to flash twice and the vibrator to vibrate twice; pressing the button three or more times caused the red LED to flash ten times and the vibrator to vibrate ten times.
+
+<img width="800" alt="project2" src="code1.jpg">
+
+<img width="800" alt="project2" src="code1.jpg">
+
+<img width="800" alt="project2" src="code1.jpg">
+
+<img width="800" alt="project2" src="code1.jpg">
+
+[Code1video placeholder here]
+
+[Mobile phone image placeholder here]
+
+---
+
+Afterward, I researched how to form a group in Particle and set up communication and data transmission. We successfully transmitted accelerometer data.
+
+Data1 Video:
+
+[Data1video placeholder here]
+
+We also achieved functionality where Selina's button press triggered the LED and vibrator on my side, using the publish and subscribe methods in our code.
+
+**Publisher Code:**
+
+```
+
+#include "Particle.h"
+
+// Define pins for button, RGB LED, and vibrator
+const int buttonPin = D6;
+const int redPin = D3;
+const int greenPin = D4;
+const int bluePin = D5;
+const int vibrationMotorPin = D7;  // 振动马达引脚
+
+// Variables to track button presses
+volatile int pressCount = 0;
+unsigned long lastPressTime = 0;  // To track time between presses
+const unsigned long pressDelay = 700;  // 增加按压的时间延迟，避免误判
+
+// Function prototypes
+void buttonPressISR();
+void turnOffLED();
+void publishButtonPress(int count);
+
+void setup() {
+// Initialize serial monitor for debugging
+Serial.begin(9600);
+// Initialize button pin
+pinMode(buttonPin, INPUT);
+attachInterrupt(buttonPin, buttonPressISR, RISING);  // Interrupt on rising edge for button press
+
+// Initialize RGB LED pins
+pinMode(redPin, OUTPUT);
+pinMode(greenPin, OUTPUT);
+pinMode(bluePin, OUTPUT);
+
+// Initialize vibrator pin
+pinMode(vibrationMotorPin, OUTPUT);
+
+// Start with LEDs and vibrator off
+turnOffLED();
+digitalWrite(vibrationMotorPin, LOW);
+}
+
+void loop() {
+// Check if press count should be evaluated
+if (pressCount > 0 && (millis() - lastPressTime > pressDelay)) {
+// 打印当前的按键次数，帮助调试
+Serial.print("Press count: ");
+Serial.println(pressCount);
+    // Publish the press count to the Particle Cloud
+    publishButtonPress(pressCount);
+
+    pressCount = 0;  // Reset press count
+}
+}
+
+// Interrupt Service Routine (ISR) for button press
+void buttonPressISR() {
+// 增加消抖时间来避免误识别
+if (millis() - lastPressTime > pressDelay) {
+pressCount = 0;  // Reset press count if the last press was too long ago
+}
+pressCount++;  // Increment press count
+lastPressTime = millis();  // Update last press time
+}
+
+// Function to publish button press count to the Particle Cloud
+void publishButtonPress(int count) {
+char data[10];
+snprintf(data, sizeof(data), "%d", count);  // Convert count to a string
+Particle.publish("buttonPress", data, PRIVATE);  // Publish event to cloud
+Serial.println("Button press event published.");
+}
+
+// Function to turn off all LEDs
+void turnOffLED() {
+digitalWrite(redPin, LOW);
+digitalWrite(greenPin, LOW);
+digitalWrite(bluePin, LOW);
+}
+
+```
+
+**Subscriber Code:**
+
+```
+#include "Particle.h"
+
+// Define pins for RGB LED and vibrator
+const int redPin = D3;
+const int greenPin = D4;
+const int bluePin = D5;
+const int vibrationMotorPin = D7;  // 振动马达引脚
+
+// Function prototypes
+void eventHandler(const char *event, const char *data);
+void turnOffLED();
+void blinkGreenAndVibrate(int times);
+void blinkYellowAndVibrate(int times);
+void blinkRedAndVibrate(int times);
+
+void setup() {
+// Initialize serial monitor for debugging
+Serial.begin(9600);
+// Subscribe to the "buttonPress" event
+Particle.subscribe("buttonPress", eventHandler);
+
+// Initialize RGB LED pins
+pinMode(redPin, OUTPUT);
+pinMode(greenPin, OUTPUT);
+pinMode(bluePin, OUTPUT);
+
+// Initialize vibrator pin
+pinMode(vibrationMotorPin, OUTPUT);
+
+// Start with LEDs and vibrator off
+turnOffLED();
+digitalWrite(vibrationMotorPin, LOW);
+}
+
+void loop() {
+// Nothing needed here; everything is handled in the event handler
+}
+
+// Event handler for received button press events
+void eventHandler(const char *event, const char *data) {
+int pressCount = atoi(data);  // Convert the received data to an integer
+Serial.printf("Received press count: %d\n", pressCount);
+// 根据按钮按下次数执行相应操作
+if (pressCount == 1) {
+    blinkGreenAndVibrate(1);  // 按一次，绿灯闪一次，振动一次
+} else if (pressCount == 2) {
+    blinkYellowAndVibrate(2);  // 按两次，黄灯闪两次，振动两次
+} else if (pressCount >= 3) {
+    blinkRedAndVibrate(10);  // 按三次及以上，红灯闪十次，振动十次
+}
+}
+
+// Function to blink green LED and vibrate a specified number of times
+void blinkGreenAndVibrate(int times) {
+for (int i = 0; i < times; i++) {
+digitalWrite(greenPin, HIGH);  // Turn green ON
+digitalWrite(vibrationMotorPin, HIGH);  // Turn vibrator ON
+delay(500);  // Wait
+digitalWrite(greenPin, LOW);  // Turn green OFF
+digitalWrite(vibrationMotorPin, LOW);   // Turn vibrator OFF
+delay(500);  // Wait
+}
+}
+
+// Function to blink yellow LED (red + green) and vibrate a specified number of times
+void blinkYellowAndVibrate(int times) {
+for (int i = 0; i < times; i++) {
+digitalWrite(redPin, HIGH);
+digitalWrite(greenPin, HIGH);  // Turn yellow ON (red + green)
+digitalWrite(vibrationMotorPin, HIGH);  // Turn vibrator ON
+delay(500);  // Wait
+digitalWrite(redPin, LOW);
+digitalWrite(greenPin, LOW);  // Turn yellow OFF
+digitalWrite(vibrationMotorPin, LOW);   // Turn vibrator OFF
+delay(500);  // Wait
+}
+}
+
+// Function to blink red LED and vibrate a specified number of times
+void blinkRedAndVibrate(int times) {
+for (int i = 0; i < times; i++) {
+digitalWrite(redPin, HIGH);  // Turn red ON
+digitalWrite(vibrationMotorPin, HIGH);  // Turn vibrator ON
+delay(500);  // Wait
+digitalWrite(redPin, LOW);  // Turn red OFF
+digitalWrite(vibrationMotorPin, LOW);   // Turn vibrator OFF
+delay(500);  // Wait
+}
+}
+
+// Function to turn off all LEDs
+void turnOffLED() {
+digitalWrite(redPin, LOW);
+digitalWrite(greenPin, LOW);
+digitalWrite(bluePin, LOW);
+}
+
+```
+
+**Mobile Video:**
+
+[Mobile video placeholder here]
+
+---
+
+Just when we thought we had achieved our goal, I suddenly realized that, given our project’s mutual nature (where the publisher can become the receiver, and the receiver can become the publisher), we needed to integrate the two roles into a shared code.
+
+I then worked on combining these roles, so that each device could act both as the sender and receiver of data. This allowed us to meet the original goal of mutual communication between the SafePair wearers.
+
+**Final Integrated Code:**
+
+```
+#include "Particle.h"
+
+// Define pins for button, RGB LED, and vibrator
+const int buttonPin = D6;
+const int redPin = D3;
+const int greenPin = D4;
+const int bluePin = D5;
+const int vibrationMotorPin = D7;  // 振动马达引脚
+
+// Variables to track button presses
+volatile int pressCount = 0;
+unsigned long lastPressTime = 0;  // To track time between presses
+const unsigned long pressDelay = 700;  // 增加按压的时间延迟，避免误判
+
+String myDeviceID;  // 记录本设备的ID
+
+// Function prototypes
+void buttonPressISR();
+void turnOffLED();
+void publishButtonPress(int count);
+void eventHandler(const char *event, const char *data);
+void blinkGreenAndVibrate(int times);
+void blinkYellowAndVibrate(int times);
+void blinkRedAndVibrate(int times);
+
+void setup() {
+// Initialize serial monitor for debugging
+Serial.begin(9600);
+// Get this device's ID
+myDeviceID = Particle.deviceID();  // 获取当前设备的ID
+Serial.println("Device ID: " + myDeviceID);  // 输出设备ID用于调试
+
+// Initialize button pin
+pinMode(buttonPin, INPUT);
+attachInterrupt(buttonPin, buttonPressISR, RISING);  // Interrupt on rising edge for button press
+
+// Initialize RGB LED pins
+pinMode(redPin, OUTPUT);
+pinMode(greenPin, OUTPUT);
+pinMode(bluePin, OUTPUT);
+
+// Initialize vibrator pin
+pinMode(vibrationMotorPin, OUTPUT);
+
+// Start with LEDs and vibrator off
+turnOffLED();
+digitalWrite(vibrationMotorPin, LOW);
+
+// Subscribe to the "buttonPress" event from any device
+Particle.subscribe("buttonPress", eventHandler);
+}
+
+void loop() {
+// Check if press count should be evaluated
+if (pressCount > 0 && (millis() - lastPressTime > pressDelay)) {
+// 打印当前的按键次数，帮助调试
+Serial.print("Press count: ");
+Serial.println(pressCount);
+    // Publish the press count to the Particle Cloud as a PUBLIC event
+    publishButtonPress(pressCount);
+
+    pressCount = 0;  // Reset press count
+}
+}
+
+// Interrupt Service Routine (ISR) for button press
+void buttonPressISR() {
+// 增加消抖时间来避免误识别
+if (millis() - lastPressTime > pressDelay) {
+pressCount = 0;  // Reset press count if the last press was too long ago
+}
+pressCount++;  // Increment press count
+lastPressTime = millis();  // Update last press time
+}
+
+// Function to publish button press count to the Particle Cloud
+void publishButtonPress(int count) {
+char data[64];
+snprintf(data, sizeof(data), "%s,%d", myDeviceID.c_str(), count);  // Convert count and deviceID to a string
+Particle.publish("buttonPress", data, PUBLIC);  // Publish event to cloud as PUBLIC
+Serial.println("Button press event published.");
+}
+
+// Event handler for received button press events
+void eventHandler(const char *event, const char *data) {
+// Extract the device ID and press count from the received data
+char senderDeviceID[64];
+int pressCount;
+sscanf(data, "%[^,],%d", senderDeviceID, &pressCount);  // 解析发送者的设备ID和按键次数
+// If the event was published by this device, ignore it
+if (String(senderDeviceID) == myDeviceID) {
+    Serial.println("Event ignored: It came from this device.");
+    return;
+}
+
+// 打印接收到的设备ID和按键次数
+Serial.printf("Received press count: %d from device: %s\\n", pressCount, senderDeviceID);
+
+// 根据按钮按下次数执行相应操作
+if (pressCount == 1) {
+    blinkGreenAndVibrate(1);  // 按一次，绿灯闪一次，振动一次
+} else if (pressCount == 2) {
+    blinkYellowAndVibrate(2);  // 按两次，黄灯闪两次，振动两次
+} else if (pressCount >= 3) {
+    blinkRedAndVibrate(10);  // 按三次及以上，红灯闪十次，振动十次
+}
+}
+
+// Function to blink green LED and vibrate a specified number of times
+void blinkGreenAndVibrate(int times) {
+for (int i = 0; i < times; i++) {
+digitalWrite(greenPin, HIGH);  // Turn green ON
+digitalWrite(vibrationMotorPin, HIGH);  // Turn vibrator ON
+delay(500);  // Wait
+digitalWrite(greenPin, LOW);  // Turn green OFF
+digitalWrite(vibrationMotorPin, LOW);   // Turn vibrator OFF
+delay(500);  // Wait
+}
+}
+
+// Function to blink yellow LED (red + green) and vibrate a specified number of times
+void blinkYellowAndVibrate(int times) {
+for (int i = 0; i < times; i++) {
+digitalWrite(redPin, HIGH);
+digitalWrite(greenPin, HIGH);  // Turn yellow ON (red + green)
+digitalWrite(vibrationMotorPin, HIGH);  // Turn vibrator ON
+delay(500);  // Wait
+digitalWrite(redPin, LOW);
+digitalWrite(greenPin, LOW);  // Turn yellow OFF
+digitalWrite(vibrationMotorPin, LOW);   // Turn vibrator OFF
+delay(500);  // Wait
+}
+}
+
+// Function to blink red LED and vibrate a specified number of times
+void blinkRedAndVibrate(int times) {
+for (int i = 0; i < times; i++) {
+digitalWrite(redPin, HIGH);  // Turn red ON
+digitalWrite(vibrationMotorPin, HIGH);  // Turn vibrator ON
+delay(500);  // Wait
+digitalWrite(redPin, LOW);  // Turn red OFF
+digitalWrite(vibrationMotorPin, LOW);   // Turn vibrator OFF
+delay(500);  // Wait
+}
+}
+
+// Function to turn off all LEDs
+void turnOffLED() {
+digitalWrite(redPin, LOW);
+digitalWrite(greenPin, LOW);
+digitalWrite(bluePin, LOW);
+}
+
+```
+
+Next, I researched how to implement GPS location sharing when the button was pressed twice or more. I integrated Google Maps API in Particle, modified the code, and finally achieved the desired functionality: when the button is pressed twice (indicating a potential risky environment) or three or more times (indicating danger), GPS location data is sent along with the LED and vibrator signals to the other SafePair wearer.
+
+**GPS Code:**
+
+```
+#include "Particle.h"
+#include <google-maps-device-locator.h>
+
+// Define pins for button, RGB LED, and vibrator
+const int buttonPin = D6;
+const int redPin = D3;
+const int greenPin = D4;
+const int bluePin = D5;
+const int vibrationMotorPin = D7;  // 振动马达引脚
+
+// Variables to track button presses
+volatile int pressCount = 0;
+unsigned long lastPressTime = 0;  // To track time between presses
+const unsigned long pressDelay = 700;  // 消抖时间延迟，避免误判
+
+String myDeviceID;  // 记录本设备的ID
+
+GoogleMapsDeviceLocator locator;  // GPS定位器对象
+
+// Function prototypes
+void buttonPressISR();
+void turnOffLED();
+void publishButtonPress(int count);
+void publishGPSLocation();
+void eventHandler(const char *event, const char *data);
+void locationCallback(float lat, float lon, float accuracy);
+void blinkGreenAndVibrate(int times);
+void blinkYellowAndVibrate(int times);
+void blinkRedAndVibrate(int times);
+
+void setup() {
+// Initialize serial monitor for debugging
+Serial.begin(9600);
+// Get this device's ID
+myDeviceID = Particle.deviceID();  // 获取当前设备的ID
+Serial.println("Device ID: " + myDeviceID);  // 输出设备ID用于调试
+
+// Initialize button pin
+pinMode(buttonPin, INPUT);
+attachInterrupt(buttonPin, buttonPressISR, RISING);  // 中断检测按钮按下
+
+// Initialize RGB LED pins
+pinMode(redPin, OUTPUT);
+pinMode(greenPin, OUTPUT);
+pinMode(bluePin, OUTPUT);
+
+// Initialize vibrator pin
+pinMode(vibrationMotorPin, OUTPUT);
+
+// Start with LEDs and vibrator off
+turnOffLED();
+digitalWrite(vibrationMotorPin, LOW);
+
+// Subscribe to the "buttonPress" event from any device
+Particle.subscribe("buttonPress", eventHandler, MY_DEVICES);
+
+// Initialize GPS locator
+locator.withSubscribe(locationCallback);  // 使用GPS定位回调
+}
+
+void loop() {
+// Check if press count should be evaluated
+if (pressCount > 0 && (millis() - lastPressTime > pressDelay)) {
+// 打印当前的按键次数，帮助调试
+Serial.print("Press count: ");
+Serial.println(pressCount);
+    // 如果按了两次或者三次及以上，发送GPS位置信息
+    if (pressCount >= 2) {
+        publishGPSLocation();  // 发送GPS位置
+    }
+
+    // 发布按钮按下次数到Particle Cloud
+    publishButtonPress(pressCount);
+
+    pressCount = 0;  // Reset press count
+}
+}
+
+// 中断服务程序，记录按钮按下次数
+void buttonPressISR() {
+if (millis() - lastPressTime > pressDelay) {
+pressCount = 0;  // 如果时间间隔太久，重置按下次数
+}
+pressCount++;  // 计数增加
+lastPressTime = millis();  // 更新上次按下时间
+}
+
+// 发布按钮按下次数到Particle Cloud
+void publishButtonPress(int count) {
+char data[64];
+snprintf(data, sizeof(data), "%s,%d", myDeviceID.c_str(), count);  // 格式化数据，包含设备ID和按下次数
+Particle.publish("buttonPress", data, PRIVATE);  // 发布私有事件
+Serial.println("Button press event published.");
+}
+
+// 发布当前设备的GPS位置到Particle Cloud
+void publishGPSLocation() {
+Serial.println("Requesting GPS location...");
+locator.publishLocation();  // 触发位置更新
+}
+
+// GPS定位回调函数
+void locationCallback(float lat, float lon, float accuracy) {
+// 将设备的纬度、经度发布到Particle Cloud
+char locationData[64];
+snprintf(locationData, sizeof(locationData), "%s,%f,%f,%f", myDeviceID.c_str(), lat, lon, accuracy);
+Particle.publish("gpsLocation", locationData, PRIVATE);
+Serial.printf("Published GPS location: lat=%f, lon=%f, accuracy=%f\n", lat, lon, accuracy);
+}
+
+// 事件处理函数，处理接收到的buttonPress事件和GPS信息
+void eventHandler(const char *event, const char *data) {
+// 检查是按键事件还是GPS事件
+if (String(event) == "buttonPress") {
+// 从接收到的数据中提取设备ID和按键次数
+char senderDeviceID[64];
+int receivedPressCount;
+sscanf(data, "%[^,],%d", senderDeviceID, &receivedPressCount);  // 解析发送设备的ID和按键次数
+ // 如果事件是由本设备发布的，忽略它
+    if (String(senderDeviceID) == myDeviceID) {
+        Serial.println("Event ignored: It came from this device.");
+        return;
+    }
+
+    // 打印接收到的设备ID和按键次数
+    Serial.printf("Received press count: %d from device: %s\\n", receivedPressCount, senderDeviceID);
+
+    // 根据接收到的按键次数执行相应操作
+    if (receivedPressCount == 1) {
+        blinkGreenAndVibrate(1);  // 如果按一次，绿灯闪一次，振动一次
+    } else if (receivedPressCount == 2) {
+        blinkYellowAndVibrate(2);  // 如果按两次，黄灯闪两次，振动两次
+    } else if (receivedPressCount >= 3) {
+        blinkRedAndVibrate(10);  // 如果按三次及以上，红灯闪十次，振动十次
+    }
+} else if (String(event) == "gpsLocation") {
+    // 接收并处理GPS信息
+    char senderDeviceID[64];
+    float lat, lon, accuracy;
+    sscanf(data, "%[^,],%f,%f,%f", senderDeviceID, &lat, &lon, &accuracy);  // 解析GPS数据
+
+    // 如果GPS信息是本设备发布的，忽略它
+    if (String(senderDeviceID) == myDeviceID) {
+        Serial.println("GPS event ignored: It came from this device.");
+        return;
+    }
+
+    // 打印接收到的GPS数据
+    Serial.printf("Received GPS location: lat=%f, lon=%f, accuracy=%f from device: %s\\n", lat, lon, accuracy, senderDeviceID);
+}
+}
+
+// LED闪烁和振动函数
+void blinkGreenAndVibrate(int times) {
+for (int i = 0; i < times; i++) {
+digitalWrite(greenPin, HIGH);  // 打开绿灯
+digitalWrite(vibrationMotorPin, HIGH);  // 打开振动马达
+delay(500);
+digitalWrite(greenPin, LOW);  // 关闭绿灯
+digitalWrite(vibrationMotorPin, LOW);  // 关闭振动马达
+delay(500);
+}
+}
+
+void blinkYellowAndVibrate(int times) {
+for (int i = 0; i < times; i++) {
+digitalWrite(redPin, HIGH);
+digitalWrite(greenPin, HIGH);  // 打开黄灯（红+绿）
+digitalWrite(vibrationMotorPin, HIGH);  // 打开振动马达
+delay(500);
+digitalWrite(redPin, LOW);
+digitalWrite(greenPin, LOW);  // 关闭黄灯
+digitalWrite(vibrationMotorPin, LOW);  // 关闭振动马达
+delay(500);
+}
+}
+
+void blinkRedAndVibrate(int times) {
+for (int i = 0; i < times; i++) {
+digitalWrite(redPin, HIGH);  // 打开红灯
+digitalWrite(vibrationMotorPin, HIGH);  // 打开振动马达
+delay(500);
+digitalWrite(redPin, LOW);  // 关闭红灯
+digitalWrite(vibrationMotorPin, LOW);  // 关闭振动马达
+delay(500);
+}
+}
+
+// 关闭所有LED灯
+void turnOffLED() {
+digitalWrite(redPin, LOW);
+digitalWrite(greenPin, LOW);
+digitalWrite(bluePin, LOW);
+}
+
+
+This is a video of our test showing the GPS location being transmitted after pressing the button twice or three times:
+
+**Particle2 Video:**
+
+[Particle2 video placeholder here]
+
+And here is the test of the LED and vibrator:
+
+**Mobile Test Video:**
+
+[Mobile test video placeholder here]
+
+Finally, I began researching how to use the accelerometer to detect specific events like a fall. This would solve a special case: if a user were to be attacked from behind or lose consciousness, they wouldn't be able to press the button themselves to alert the other wearer. I researched how the accelerometer could automatically trigger a red LED flash and ten vibrations, while also sending the user’s GPS location when it detected a sudden fall.
+
+**Final Accelerometer Code:**
+
+```
+#include "Particle.h"
+#include <MPU6050.h>
+#include <google-maps-device-locator.h>
+
+// Define pins for button, RGB LED, and vibrator
+const int buttonPin = D6;
+const int redPin = D3;
+const int greenPin = D4;
+const int bluePin = D5;
+const int vibrationMotorPin = D7;  // 振动马达引脚
+
+// Variables to track button presses and accelerometer readings
+volatile int pressCount = 0;
+unsigned long lastPressTime = 0;  // To track time between presses
+const unsigned long pressDelay = 700;  // 按钮消抖时间延迟
+
+String myDeviceID;  // 记录本设备的ID
+GoogleMapsDeviceLocator locator;  // GPS定位器对象
+
+MPU6050 mpu;  // 创建MPU6050对象
+bool fallDetected = false;  // 跌倒检测标志
+
+// Function prototypes
+void buttonPressISR();
+void turnOffLED();
+void publishButtonPress(int count);
+void publishFallEvent();
+void publishGPSLocation();
+void eventHandler(const char *event, const char *data);
+void locationCallback(float lat, float lon, float accuracy);
+void blinkGreenAndVibrate(int times);
+void blinkYellowAndVibrate(int times);
+void blinkRedAndVibrate(int times);
+void checkForFall();
+
+void setup() {
+// Initialize serial monitor for debugging
+Serial.begin(9600);
+// Get this device's ID
+myDeviceID = Particle.deviceID();  // 获取当前设备的ID
+Serial.println("Device ID: " + myDeviceID);  // 输出设备ID用于调试
+
+// Initialize button pin
+pinMode(buttonPin, INPUT);
+attachInterrupt(buttonPin, buttonPressISR, RISING);  // 中断检测按钮按下
+
+// Initialize RGB LED pins
+pinMode(redPin, OUTPUT);
+pinMode(greenPin, OUTPUT);
+pinMode(bluePin, OUTPUT);
+
+// Initialize vibrator pin
+pinMode(vibrationMotorPin, OUTPUT);
+
+// Start with LEDs and vibrator off
+turnOffLED();
+digitalWrite(vibrationMotorPin, LOW);
+
+// Subscribe to the "buttonPress" and "fallDetected" events from any device
+Particle.subscribe("buttonPress", eventHandler, MY_DEVICES);
+Particle.subscribe("fallDetected", eventHandler, MY_DEVICES);
+
+// Initialize GPS locator
+locator.withSubscribe(locationCallback);  // 使用GPS定位回调
+
+// Initialize accelerometer (MPU6050)
+Wire.begin();
+mpu.initialize();
+if (!mpu.testConnection()) {
+    Serial.println("MPU6050 connection failed!");
+    while (1);
+} else {
+    Serial.println("MPU6050 connected successfully.");
+}
+}
+
+void loop() {
+// 检测按钮按下的次数
+if (pressCount > 0 && (millis() - lastPressTime > pressDelay)) {
+Serial.print("Press count: ");
+Serial.println(pressCount);
+    if (pressCount >= 2) {
+        publishGPSLocation();  // 按两次或三次时发送GPS位置信息
+    }
+
+    publishButtonPress(pressCount);  // 传输按钮按下次数
+
+    pressCount = 0;  // Reset press count
+}
+
+// Check for fall detection via accelerometer
+checkForFall();  // 检查是否检测到摔倒
+}
+
+// 中断服务程序，记录按钮按下次数
+void buttonPressISR() {
+if (millis() - lastPressTime > pressDelay) {
+pressCount = 0;
+}
+pressCount++;
+lastPressTime = millis();
+}
+
+// 发布按钮按下次数到Particle Cloud
+void publishButtonPress(int count) {
+char data[64];
+snprintf(data, sizeof(data), "%s,%d", myDeviceID.c_str(), count);
+Particle.publish("buttonPress", data, PRIVATE);
+Serial.println("Button press event published.");
+}
+
+// 发布跌倒事件到Particle Cloud
+void publishFallEvent() {
+char data[64];
+snprintf(data, sizeof(data), "%s,FALL", myDeviceID.c_str());
+Particle.publish("fallDetected", data, PRIVATE);
+Serial.println("Fall event published.");
+}
+
+// 发布当前设备的GPS位置到Particle Cloud
+void publishGPSLocation() {
+Serial.println("Requesting GPS location...");
+locator.publishLocation();
+}
+
+// GPS定位回调函数
+void locationCallback(float lat, float lon, float accuracy) {
+char locationData[64];
+snprintf(locationData, sizeof(locationData), "%s,%f,%f,%f", myDeviceID.c_str(), lat, lon, accuracy);
+Particle.publish("gpsLocation", locationData, PRIVATE);
+Serial.printf("Published GPS location: lat=%f, lon=%f, accuracy=%f\n", lat, lon, accuracy);
+}
+
+// 事件处理函数，处理接收到的buttonPress和GPS信息
+void eventHandler(const char *event, const char *data) {
+char senderDeviceID[64];
+int receivedPressCount;
+sscanf(data, "%[^,],%d", senderDeviceID, &receivedPressCount);
+if (String(senderDeviceID) == myDeviceID) {
+    Serial.println("Event ignored: It came from this device.");
+    return;
+}
+
+if (String(event) == "buttonPress") {
+    Serial.printf("Received press count: %d from device: %s\\n", receivedPressCount, senderDeviceID);
+
+    if (receivedPressCount == 1) {
+        blinkGreenAndVibrate(1);
+    } else if (receivedPressCount == 2) {
+        blinkYellowAndVibrate(2);
+    } else if (receivedPressCount >= 3) {
+        blinkRedAndVibrate(10);
+    }
+} else if (String(event) == "fallDetected") {
+    Serial.printf("Fall detected from device: %s\\n", senderDeviceID);
+    blinkRedAndVibrate(10);  // 对方摔倒时，我的设备响应红灯和振动
+} else if (String(event) == "gpsLocation") {
+    float lat, lon, accuracy;
+    sscanf(data, "%[^,],%f,%f,%f", senderDeviceID, &lat, &lon, &accuracy);
+    Serial.printf("Received GPS location: lat=%f, lon=%f, accuracy=%f from device: %s\\n", lat, lon, accuracy, senderDeviceID);
+}
+}
+
+// 检测摔倒事件
+void checkForFall() {
+int16_t ax, ay, az;
+mpu.getAcceleration(&ax, &ay, &az);
+if (az < -10000) {  // 假设 Z 轴低于-10000表示摔倒
+    if (!fallDetected) {
+        fallDetected = true;
+        Serial.println("Fall detected!");
+
+        // 不在本设备触发LED和振动，只是发布事件
+        publishFallEvent();
+        publishGPSLocation();
+    }
+} else {
+    fallDetected = false;  // 如果没有检测到摔倒，重置标志
+}
+
+```
+
+This is a video showing how data was transmitted via Particle:
+
+**Particle3 Video:**
+
+[Particle3 video placeholder here]
+
+And here is the test of the vibrator, LED, and accelerometer (to facilitate testing, we made the fall detection zone more sensitive, and we plan to adjust this in the future):
+
+**Mobile Test Video 3:**
+
+[Mobile test video 3 placeholder here]
+
+Clara is in charge of designing the wearable bracelet’s appearance. Later, we plan to solder the breadboard circuits onto a prototype board to create a more aesthetically pleasing design. We will also consider creating an app to make SafePair more user-friendly, and explore custom PCB designs to make this wearable product lighter, more comfortable, and visually appealing.
+
 # Week 7: Report 7
 
-## week of 10/17/2024
+## Week of 10/17/2024
 
 This week, our group started working on Project 2 together. Our project is called SafePair, mainly focused on safety protection and alerts for women. The basic concept is that when the button is pressed once, the LED lights green once, and the vibrator vibrates once; when pressed twice, the LED flashes yellow twice, and the vibrator vibrates in two pulses with a one-second interval; when pressed three times or more, the LED flashes red ten times, and the vibrator vibrates continuously ten times with a one-second interval. Additionally, it includes GPS tracking and an accelerometer that detects gestures to determine if the user has fallen.
 At first, we thought of building the whole system together, so I started by wiring the circuit.
