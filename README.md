@@ -6,25 +6,23 @@ This week, I continued working on Project 2, focusing on achieving our goals usi
 
 Initially, I was testing the functionality of the vibrator. After Selina successfully set up and tested the LED circuit and code, I began working on integrating the vibrator and LED together, combining our codes to make the LED and vibrator function simultaneously. The result was: pressing the button once caused the green LED to flash once and the vibrator to vibrate once; pressing the button twice caused the yellow LED to flash twice and the vibrator to vibrate twice; pressing the button three or more times caused the red LED to flash ten times and the vibrator to vibrate ten times.
 
-<img width="800" alt="project2" src="code1.jpg">
+<img width="800" alt="project2" src="code1-1.png">
 
-<img width="800" alt="project2" src="code1.jpg">
+<img width="800" alt="project2" src="code1-2.png">
 
-<img width="800" alt="project2" src="code1.jpg">
+<img width="800" alt="project2" src="code1-3.png">
 
-<img width="800" alt="project2" src="code1.jpg">
+<img width="800" alt="project2" src="code1-4.png">
 
-[Code1video placeholder here]
+***Click & Watch the video:***
 
-[Mobile phone image placeholder here]
-
----
+[![Watch the video](https://img.youtube.com/vi/z4Sgi6k03Hc/0.jpg)](https://youtu.be/z4Sgi6k03Hc)
 
 Afterward, I researched how to form a group in Particle and set up communication and data transmission. We successfully transmitted accelerometer data.
 
-Data1 Video:
+***Click & Watch the video:***
 
-[Data1video placeholder here]
+[![Watch the video](https://img.youtube.com/vi/_5fk__s5YHY/0.jpg)](https://youtu.be/_5fk__s5YHY)
 
 We also achieved functionality where Selina's button press triggered the LED and vibrator on my side, using the publish and subscribe methods in our code.
 
@@ -213,11 +211,9 @@ digitalWrite(bluePin, LOW);
 
 ```
 
-**Mobile Video:**
+***Click & Watch the video:***
 
-[Mobile video placeholder here]
-
----
+[![Watch the video](https://img.youtube.com/vi/T21SOQhg_h0/0.jpg)](https://youtu.be/T21SOQhg_h0)
 
 Just when we thought we had achieved our goal, I suddenly realized that, given our project’s mutual nature (where the publisher can become the receiver, and the receiver can become the publisher), we needed to integrate the two roles into a shared code.
 
@@ -581,18 +577,20 @@ digitalWrite(greenPin, LOW);
 digitalWrite(bluePin, LOW);
 }
 
+```
 
 This is a video of our test showing the GPS location being transmitted after pressing the button twice or three times:
 
-**Particle2 Video:**
+***Click & Watch the video:***
 
-[Particle2 video placeholder here]
+[![Watch the video](https://img.youtube.com/vi/I8CMkM1wRdo/0.jpg)](https://youtu.be/I8CMkM1wRdo)
 
 And here is the test of the LED and vibrator:
 
-**Mobile Test Video:**
+***Click & Watch the video:***
 
-[Mobile test video placeholder here]
+[![Watch the video](https://img.youtube.com/vi/GTYBmNiHcSQ/0.jpg)](https://youtu.be/GTYBmNiHcSQ)
+
 
 Finally, I began researching how to use the accelerometer to detect specific events like a fall. This would solve a special case: if a user were to be attacked from behind or lose consciousness, they wouldn't be able to press the button themselves to alert the other wearer. I researched how the accelerometer could automatically trigger a red LED flash and ten vibrations, while also sending the user’s GPS location when it detected a sudden fall.
 
@@ -783,15 +781,15 @@ if (az < -10000) {  // 假设 Z 轴低于-10000表示摔倒
 
 This is a video showing how data was transmitted via Particle:
 
-**Particle3 Video:**
+***Click & Watch the video:***
 
-[Particle3 video placeholder here]
+[![Watch the video](https://img.youtube.com/vi/whb1cYwBvs4/0.jpg)](https://youtu.be/whb1cYwBvs4)
 
 And here is the test of the vibrator, LED, and accelerometer (to facilitate testing, we made the fall detection zone more sensitive, and we plan to adjust this in the future):
 
-**Mobile Test Video 3:**
+***Click & Watch the video:***
 
-[Mobile test video 3 placeholder here]
+[![Watch the video](https://img.youtube.com/vi/ZLytj6PKkMY/0.jpg)](https://youtu.be/ZLytj6PKkMY)
 
 Clara is in charge of designing the wearable bracelet’s appearance. Later, we plan to solder the breadboard circuits onto a prototype board to create a more aesthetically pleasing design. We will also consider creating an app to make SafePair more user-friendly, and explore custom PCB designs to make this wearable product lighter, more comfortable, and visually appealing.
 
