@@ -10,15 +10,15 @@ I started with a simple setup, using a Conversational Input and a Number Slider 
 
 **Related Images**:
 
-Basic setup with input and slider.
+Basic setup with input and slider and testing with different answers.
 
-<img width="800" alt="project2" src="code1-1.png">
+<img width="800" alt="llm" src="answer1.png">
+
+<img width="800" alt="llm" src="answer2.png">
 
 Initial greeting and question prompts for testing.
 
-<img width="800" alt="project2" src="code1-1.png">
-
-<img width="800" alt="project2" src="code1-1.png">
+<img width="800" alt="llm" src="greetingandoption.png">
 
 ### Experiment 2: **GPT+Instruction**
 
@@ -28,13 +28,13 @@ In the second experiment, I added more detailed instructions in the prompt to gu
 
 Prompt with detailed instructions.
 
-<img width="800" alt="project2" src="code1-1.png">
+<img width="800" alt="llm" src="2prompt.png">
 
 Example responses with different prompt levels.
 
-<img width="800" alt="project2" src="code1-1.png">
+<img width="800" alt="llm" src="answer3.png">
 
-<img width="800" alt="project2" src="code1-1.png">
+<img width="800" alt="llm" src="experiment2.png">
 
 ### Experiment 3: **GPT+Intruction+RAG**
 
@@ -42,11 +42,11 @@ For the third experiment, I introduced RAG to let GPT pull info directly from my
 
 Threshold adjustments.
 
-<img width="800" alt="project2" src="code1-1.png">
+<img width="800" alt="llm" src="threshold.png">
 
 Example responses using RAG for the Alexander Wang question.
 
-<img width="800" alt="project2" src="code1-1.png">
+<img width="800" alt="llm" src="differentanswers.png">
 
 ### Experiment 4: **GPT+INSTRUCT+RAG+VARIABLE**
 
@@ -56,17 +56,17 @@ In the final experiment, I went for a comprehensive setup using Location and Yea
 
 Testing with LOCATION and YEAR.
 
-<img width="800" alt="project2" src="code1-1.png">
+<img width="800" alt="llm" src="4yearandlocation.png">
 
 Responses across different years and locations, plus final configuration.
 
-<img width="800" alt="project2" src="code1-1.png">
+<img width="800" alt="llm" src="2023.png">
 
-<img width="800" alt="project2" src="code1-1.png">
+<img width="800" alt="llm" src="2022.png">
 
-<img width="800" alt="project2" src="code1-1.png">
+<img width="800" alt="llm" src="noyear.png">
 
-<img width="800" alt="project2" src="code1-1.png">
+<img width="800" alt="llm" src="postman.png">
 
 ### Speculation & Reflection
 
