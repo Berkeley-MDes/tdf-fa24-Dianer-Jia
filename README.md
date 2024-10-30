@@ -1,3 +1,79 @@
+# Week 9: Report 9
+
+## Week of 10/31/2024
+
+This week, I explored how different configurations on ZeroWidth can help GPT answer questions more accurately about my background and work experience. I ran four experiments, each testing various combinations of prompts, RAG (Retrieval-Augmented Generation), and context variables. Here’s a breakdown of each experiment and what I observed.
+
+### Experiment 1: GPT
+
+I started with a simple setup, using a Conversational Input and a Number Slider to control response length. This experiment was mainly about getting familiar with ZeroWidth’s basic components and testing how much customization I could do with just a few settings.
+
+**Related Images**:
+
+Basic setup with input and slider.
+
+<img width="800" alt="project2" src="code1-1.png">
+
+Initial greeting and question prompts for testing.
+
+<img width="800" alt="project2" src="code1-1.png">
+
+<img width="800" alt="project2" src="code1-1.png">
+
+### Experiment 2: **GPT+Instruction**
+
+In the second experiment, I added more detailed instructions in the prompt to guide GPT's responses to better align with my design and education background. The aim was to make the answers feel more tailored to my experiences, and the added details in the prompt seemed to improve relevance.
+
+**Related Images**:
+
+Prompt with detailed instructions.
+
+<img width="800" alt="project2" src="code1-1.png">
+
+Example responses with different prompt levels.
+
+<img width="800" alt="project2" src="code1-1.png">
+
+<img width="800" alt="project2" src="code1-1.png">
+
+### Experiment 3: **GPT+Intruction+RAG**
+
+For the third experiment, I introduced RAG to let GPT pull info directly from my résumé, hoping to get more specific answers. Adjusting the Similarity Threshold in RAG showed some interesting results. Lower thresholds gave broader answers, while higher ones focused more on specific information. This was particularly noticeable in responses to questions like “Did Dianer work at Alexander Wang?”
+
+Threshold adjustments.
+
+<img width="800" alt="project2" src="code1-1.png">
+
+Example responses using RAG for the Alexander Wang question.
+
+<img width="800" alt="project2" src="code1-1.png">
+
+### Experiment 4: **GPT+INSTRUCT+RAG+VARIABLE**
+
+In the final experiment, I went for a comprehensive setup using Location and Year variables along with INSTRUCT and RAG. I tested this with Postman to simulate different locations and years, which allowed GPT to provide contextually relevant answers based on variables like “New York” and “2023.” This setup really helped in creating more dynamic responses.
+
+**Related Images**:
+
+Testing with LOCATION and YEAR.
+
+<img width="800" alt="project2" src="code1-1.png">
+
+Responses across different years and locations, plus final configuration.
+
+<img width="800" alt="project2" src="code1-1.png">
+
+<img width="800" alt="project2" src="code1-1.png">
+
+<img width="800" alt="project2" src="code1-1.png">
+
+<img width="800" alt="project2" src="code1-1.png">
+
+### Speculation & Reflection
+
+This week’s experiments showed how powerful it can be to combine prompts, RAG, and variables for more tailored answers. Adjusting the Similarity Threshold is especially useful for balancing between specific and general responses. Moving forward, adding more context variables (e.g., specific projects or skills) could make GPT even more responsive to unique details in my background.
+
+This report, along with the images, captures my progress and insights from each experiment. Excited to keep refining the setup!
+
 # Week 8: Report 8
 
 ## Week of 10/24/2024
