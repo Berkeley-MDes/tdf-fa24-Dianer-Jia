@@ -13,21 +13,21 @@ Testing the eight questions, I saw a clear improvement. While Experiments 1-3 st
 
 I'll show the 5 different answers of the first question - What is your purpose?
 
-<img width="800" alt="llm" src="llm1.png">
+<img width="800" alt="llm" src="llm1.PNG">
 
-<img width="800" alt="llm" src="llm2.png">
+<img width="800" alt="llm" src="llm2.PNG">
 
-<img width="800" alt="llm" src="llm3.png">
+<img width="800" alt="llm" src="llm3.PNG">
 
-<img width="800" alt="llm" src="llm4.png">
+<img width="800" alt="llm" src="llm4.PNG">
 
-<img width="800" alt="llm" src="llm5.png">
+<img width="800" alt="llm" src="llm5.PNG">
 
 Also, what is really interesting is when I asked my own question "If you could collaborate with any famous designer or technologist(real or fictional), who would it be and how would they influence your work?" Experiment 1-4 all gave me the answer "Jony Ive". But Experiment 5 gave me the answer of "Buckminster Fuller", and after I adjusted the temperature, it gave me the answer of "Leonardo da Vinci".
 
-<img width="800" alt="llm" src="llm5-1.png">
+<img width="800" alt="llm" src="llm5-1.jpg">
 
-<img width="800" alt="llm" src="llm5-2.png">
+<img width="800" alt="llm" src="llm5-2.jpg">
 
 **Speculation and Conclusion**
 
