@@ -1,3 +1,38 @@
+# Week 10: Report 10
+
+## Week of 11/07/2024
+
+This week, I focused on building Experiment 5, the final and most advanced version of my personalized AI mentor. By combining knowledge retrieval, instruction layers, and dynamic variables like WEEK, PROJECT, and MENTORSTYLE, I created a model that could adapt its responses with both depth and creativity. Compared to earlier experiments, Experiment 5 stood out for its ability to provide insightful and context-aware answers, especially with a creative mentorship tone.
+
+***Click & Watch the video:***
+
+[![Watch the video](https://img.youtube.com/vi/PaNeH0N7uKE/0.jpg)](https://youtu.be/PaNeH0N7uKE)
+
+
+Testing the eight questions, I saw a clear improvement. While Experiments 1-3 struggled with generic or surface-level answers, Experiment 5 delivered responses that felt polished and imaginative. For the last five questions, Experiment 5 really shined, showcasing its ability to blend practical advice with visionary ideas.
+
+I'll show the 5 different answers of the first question - What is your purpose?
+
+<img width="800" alt="llm" src="answer2.png">
+
+<img width="800" alt="llm" src="answer2.png">
+
+<img width="800" alt="llm" src="answer2.png">
+
+<img width="800" alt="llm" src="answer2.png">
+
+<img width="800" alt="llm" src="answer2.png">
+
+Also, what is really interesting is when I asked my own question "If you could collaborate with any famous designer or technologist(real or fictional), who would it be and how would they influence your work?" Experiment 1-4 all gave me the answer "Jony Ive". But Experiment 5 gave me the answer of "Buckminster Fuller", and after I adjusted the temperature, it gave me the answer of "Leonardo da Vinci".
+
+<img width="800" alt="llm" src="answer2.png">
+
+<img width="800" alt="llm" src="answer2.png">
+
+**Speculation and Conclusion**
+
+This final experiment showed me how far AI can go in offering personalized, meaningful guidance. With the right tools and context, AI mentors could one day adapt to individual needs, blending functionality with creativity. Building Experiment 5 was challenging but rewarding—it feels like a step toward something much bigger.
+
 # Week 9: Report 9
 
 ## Week of 10/31/2024
