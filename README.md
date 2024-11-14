@@ -1,3 +1,35 @@
+# Week 11: Report 11
+
+## Week of 11/14/2024
+
+### Reflections
+
+This week, I focused on finalizing my LLM project report and learned a lot from the critique session with my peers. What stood out most was Xiao Peng’s AI agent, which used a humorous tone and responded to questions in a playful doggerel form. It reminded me of my Experiment 5, which also incorporates creative tones, and made me think about combining this approach with mine to add a playful yet meaningful layer to my agent’s responses. This insight showed me how varied and impactful tone customization can be in AI design.
+
+My Experiment 5:
+
+<img width="800" alt="llm" src="llm1.PNG">
+
+My Experiment 5 Answering Questions in a Creative Mentor Style
+
+<img width="800" alt="llm" src="llm1.PNG">
+
+Although my work this week was mainly about wrapping up the project, the critique helped me reflect on my own experiments and see opportunities for improvement. Overall, my project is in a strong state, and I feel prepared to present it with confidence.
+
+My Experiment 5 Diagram
+
+<img width="800" alt="llm" src="llm1.PNG">
+
+### Speculations
+
+Looking ahead, I believe LLMs will increasingly incorporate more flexible and creative tone adjustments, allowing agents to adapt their personality and responses even more dynamically. This could make AI assistants feel more relatable and engaging in both professional and casual contexts. I also see a future where LLMs integrate cultural nuances more deeply, using humor and storytelling styles tailored to different audiences, much like Xiao Peng’s doggerel approach.
+
+For my own work, I want to explore how creative tone adjustments could further enhance user engagement. Adding elements like poetic or humorous responses could make AI interactions not just useful, but also memorable and enjoyable.
+
+### Bonus
+
+While reading about AI advancements, I came across OpenAI’s recent research on multimodal agents that can process text, images, and even sound in real time. This got me thinking about expanding my agent’s capabilities to include visual or auditory input, which could make future projects more interactive. [Link to article: OpenAI Multimodal Research](https://www.openai.com/blog/multimodal-models)
+
 # Week 10: Report 10
 
 ## Week of 11/07/2024
