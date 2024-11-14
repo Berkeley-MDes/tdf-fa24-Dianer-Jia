@@ -8,17 +8,21 @@ This week, I focused on finalizing my LLM project report and learned a lot from 
 
 My Experiment 5:
 
-<img width="800" alt="llm" src="llm1.PNG">
+<img width="800" alt="llm" src="exp5.png">
 
-My Experiment 5 Answering Questions in a Creative Mentor Style
+My Experiment 5 Answering Questions in a Creative Mentor Style:
 
-<img width="800" alt="llm" src="llm1.PNG">
+***Click & Watch the video:***
+
+[![Watch the video](https://img.youtube.com/vi/8Sz4jyPryXU/0.jpg)](https://youtu.be/8Sz4jyPryXU)
 
 Although my work this week was mainly about wrapping up the project, the critique helped me reflect on my own experiments and see opportunities for improvement. Overall, my project is in a strong state, and I feel prepared to present it with confidence.
 
-My Experiment 5 Diagram
+My Experiment 5 Diagram:
 
-<img width="800" alt="llm" src="llm1.PNG">
+<img width="800" alt="llm" src="SAD.png">
+
+<img width="800" alt="llm" src="PFD.png">
 
 ### Speculations
 
