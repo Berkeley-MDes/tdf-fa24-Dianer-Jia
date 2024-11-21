@@ -1,5 +1,36 @@
 # Week 11: Report 11
 
+## Week of 11/21/2024
+
+### Reflections
+
+This week, I spent a lot of time brainstorming with Clara, Yingying, and Tommy about what direction to take for Project 4. We’ve narrowed it down to two exciting ideas:
+
+1. **Whispering Wishes**: An interactive art installation where participants share personal wishes, which are then transformed into magical visuals using voice recognition and generative art. It’s about making intangible hopes and dreams visible in a creative, immersive way.
+
+<img width="800" alt="llm" src="SAD.png">
+
+<img width="800" alt="llm" src="SAD.png">
+
+<img width="800" alt="llm" src="SAD.png">
+
+Link to proposal: https://docs.google.com/document/d/1RQCVvnXsjIpjih198S8DRohN0kVOXyemaTQAfZWLtnQ/edit?usp=sharing
+
+2. **My Dinner**: An installation exploring interpersonal relationships as mirrors of ourselves. Participants engage in a simple activity, like a meal, while a screen avatar gradually transforms to mirror their actions and appearance, symbolizing self-discovery through others.
+
+We’re still debating which concept to pursue, but the process of discussing and refining these ideas has been inspiring. We’re all excited about the potential of this project and eager to bring one of these visions to life.
+
+### Thinking
+
+What stood out to me during our discussions is how both ideas are deeply rooted in emotional and personal connections. "Whispering Wishes" is about visualizing intangible feelings, while "My Dinner" reflects the complexity of self-perception in relationships. This made me think about how technology can tap into such personal experiences and make them feel magical or thought-provoking. Both concepts offer unique ways to engage participants emotionally, which I think is a key strength in interactive art.
+
+### Speculation
+
+Looking forward, I wonder how interactive installations like these could evolve with advancements in technology. For example, integrating more nuanced AI could allow "My Dinner" to interpret subtle emotional cues, or "Whispering Wishes" could respond to tone or sentiment in participants' voices. These projects hint at a future where digital interactions become more personalized and empathetic, blurring the line between art, technology, and human emotion. Whatever we choose, I believe this project will push us to explore these possibilities in a meaningful way.
+
+
+# Week 11: Report 11
+
 ## Week of 11/14/2024
 
 ### Reflections
