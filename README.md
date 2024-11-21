@@ -8,11 +8,11 @@ This week, I spent a lot of time brainstorming with Clara, Yingying, and Tommy a
 
 1. **Whispering Wishes**: An interactive art installation where participants share personal wishes, which are then transformed into magical visuals using voice recognition and generative art. It’s about making intangible hopes and dreams visible in a creative, immersive way.
 
-<img width="800" alt="llm" src="SAD.png">
+<img width="800" alt="p4" src="whisper.png">
 
-<img width="800" alt="llm" src="SAD.png">
+<img width="800" alt="p4" src="dsa.png">
 
-<img width="800" alt="llm" src="SAD.png">
+<img width="800" alt="llm" src="dpd.png">
 
 Link to proposal: https://docs.google.com/document/d/1RQCVvnXsjIpjih198S8DRohN0kVOXyemaTQAfZWLtnQ/edit?usp=sharing
 
