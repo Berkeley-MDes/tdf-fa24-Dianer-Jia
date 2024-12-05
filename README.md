@@ -13,11 +13,11 @@ These two weeks’ work focused on integrating multiple components with the Phot
     - Trained a machine learning model in Edge Impulse to recognize the gesture of “hands clasped together.”
     - Successfully deployed the model to the Photon 2 and integrated it with LED control, where the recognized gesture would toggle an LED on/off or change its blinking pattern.
 
-<img width="800" alt="p4" src="whisper.png">
+    <img width="800" alt="p4" src="edgeimpulse.png">
 
 ***Click & Watch the video:***
 
-[![Watch the video](https://img.youtube.com/vi/PaNeH0N7uKE/0.jpg)](https://youtu.be/PaNeH0N7uKE)
+[![Watch the video](https://img.youtube.com/vi/59HAXbuEiKE/0.jpg)](https://youtube.com/shorts/59HAXbuEiKE)
       
 3. **LED to LED Strip Transition**:
     - Initially worked with a single LED for gesture-based control but transitioned to a WS2812B addressable LED strip for more dynamic lighting effects.
@@ -26,7 +26,7 @@ These two weeks’ work focused on integrating multiple components with the Phot
         - Properly connect and power the strip using `VUSB` (5V) instead of `3.3V` for stable operation.
     - Achieved dynamic animations (e.g., red, green, and blue transitions) after multiple failures.
 
-<img width="800" alt="p4" src="whisper.png">
+    <img width="800" alt="p4" src="neopixel.png">
 
 4. **DFPlayer Mini Audio Playback**:
     - Connected and tested the DFPlayer Mini module with the Photon 2, successfully sending commands via UART (D8 for TX, D9 for RX).
@@ -35,7 +35,7 @@ These two weeks’ work focused on integrating multiple components with the Phot
         - **SD Card Removed**: `7E FF 6 3B 0 0 2 FE BE EF`
     - Explored playback of a variety of audio files (`0001.mp3`), adjusting file length, bitrate, and formatting.
 
-<img width="800" alt="p4" src="whisper.png">
+    <img width="800" alt="p4" src="dfplayermini.png">
 
 ### **Key Challenges**
 
@@ -53,7 +53,7 @@ These two weeks’ work focused on integrating multiple components with the Phot
         - Testing with multiple SD cards and audio files but still unable to produce audible sound.
     - Serial monitor responses confirmed module connection and SD card detection, but playback issues persisted.
   
-<img width="800" alt="p4" src="whisper.png">
+    <img width="800" alt="p4" src="dfplayerminiconnection.png">
 
 ### **Lessons Learned**
 
