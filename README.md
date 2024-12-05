@@ -1,3 +1,93 @@
+## Week 12 & 13: Report 12
+
+## Week of 12/5/2024
+
+
+### **Project Overview**
+
+These two weeks’ work focused on integrating multiple components with the Photon 2 microcontroller for an interactive system. The project included gesture recognition using machine learning (via Edge Impulse), controlling LEDs and LED strips, and playing audio through a DFPlayer Mini module. Despite numerous challenges and iterative testing, significant progress was made.
+
+### **Key Achievements**
+
+1. **Gesture Recognition with Edge Impulse**:
+    - Trained a machine learning model in Edge Impulse to recognize the gesture of “hands clasped together.”
+    - Successfully deployed the model to the Photon 2 and integrated it with LED control, where the recognized gesture would toggle an LED on/off or change its blinking pattern.
+
+<img width="800" alt="p4" src="whisper.png">
+
+***Click & Watch the video:***
+
+[![Watch the video](https://img.youtube.com/vi/PaNeH0N7uKE/0.jpg)](https://youtu.be/PaNeH0N7uKE)
+      
+3. **LED to LED Strip Transition**:
+    - Initially worked with a single LED for gesture-based control but transitioned to a WS2812B addressable LED strip for more dynamic lighting effects.
+    - Debugged and optimized LED strip code to:
+        - Address timing issues specific to WS2812B.
+        - Properly connect and power the strip using `VUSB` (5V) instead of `3.3V` for stable operation.
+    - Achieved dynamic animations (e.g., red, green, and blue transitions) after multiple failures.
+
+<img width="800" alt="p4" src="whisper.png">
+
+4. **DFPlayer Mini Audio Playback**:
+    - Connected and tested the DFPlayer Mini module with the Photon 2, successfully sending commands via UART (D8 for TX, D9 for RX).
+    - Debugged SD card detection and verified command execution with serial monitor outputs:
+        - **SD Card Inserted**: `7E FF 6 3A 0 0 2 FE BF EF`
+        - **SD Card Removed**: `7E FF 6 3B 0 0 2 FE BE EF`
+    - Explored playback of a variety of audio files (`0001.mp3`), adjusting file length, bitrate, and formatting.
+
+<img width="800" alt="p4" src="whisper.png">
+
+### **Key Challenges**
+
+1. **Gesture Recognition Integration**:
+    - Initial failures in gesture recognition due to insufficient training data and deployment issues.
+    - Adjusted data collection and model parameters to improve accuracy, resulting in reliable gesture detection.
+2. **LED Strip Control**:
+    - Encountered multiple issues with powering the WS2812B strip, including insufficient current from the 3.3V pin.
+    - Debugged timing issues in the LED strip code, ensuring proper communication protocol for color control.
+    - The LED strip finally lit up correctly after addressing hardware and software issues, marking a significant milestone.
+3. **DFPlayer Mini Playback**:
+    - Persistent challenges in audio playback, including:
+        - Static noise from the speaker without actual audio output.
+        - Confusion over the MH2024K-24SS chip variant of the DFPlayer Mini, requiring careful timing and checksum adjustments.
+        - Testing with multiple SD cards and audio files but still unable to produce audible sound.
+    - Serial monitor responses confirmed module connection and SD card detection, but playback issues persisted.
+  
+<img width="800" alt="p4" src="whisper.png">
+
+### **Lessons Learned**
+
+- **Iterative Debugging**: Each component (gesture control, LED strip, and audio playback) required multiple iterations of hardware setup and code refinement, highlighting the importance of patience and systematic troubleshooting.
+- **Power Management**: Proper power supply is critical for hardware components like LED strips and speakers. The switch from `3.3V` to `VUSB` resolved many issues with the LED strip.
+- **Community Knowledge**: Online resources and documentation were invaluable for identifying quirks of the MH2024K-24SS chip and WS2812B protocol.
+
+### **Speculation and Next Steps**
+
+1. **Speculation**:
+    - **DFPlayer Mini**:
+        - The lack of sound output might be due to insufficient amplification or speaker compatibility. The onboard audio amplifier might not provide enough power for the connected speaker.
+        - Timing requirements for the MH2024K-24SS chip might cause skipped commands, especially with short audio files or insufficient delays.
+    - **LED Strip**:
+        - With the LED strip functioning, there might still be room to optimize animations and transitions for smoother effects.
+    - **Gesture Recognition**:
+        - Although successful, adding more gestures might strain the Photon 2’s resources, requiring optimization in future iterations.
+2. **Next Steps**:
+    - **DFPlayer Mini**:
+        - Test with a different speaker or earphone using a 3.5mm jack-to-bare-wire adapter to verify audio output.
+        - Use longer audio files with consistent bitrate and verify playback.
+        - Explore alternative audio modules if the DFPlayer Mini fails to meet requirements.
+    - **LED Strip**:
+        - Refine code for complex animations and test interactions with gesture control.
+    - **Gesture Control**:
+        - Add more gestures to enhance interactivity while monitoring system performance.
+    - **Final Integration**:
+        - Combine gesture-controlled LED effects with audio playback for a cohesive demonstration.
+
+### **Reflection**
+
+This week was marked by significant breakthroughs and persistent challenges. From achieving gesture recognition to lighting up the LED strip, each success provided valuable insights. However, the ongoing issues with the DFPlayer Mini underscore the complexity of integrating diverse hardware components. Moving forward, I aim to resolve these issues while building on the momentum gained this week.
+
+
 # Week 11: Report 11
 
 ## Week of 11/21/2024
