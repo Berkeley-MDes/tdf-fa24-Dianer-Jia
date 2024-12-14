@@ -15,7 +15,13 @@ This week’s work concentrated on completing the integration of gesture recogni
     
     After successfully lighting the NeoPixel strip last week, I focused on enhancing its functionality. I programmed the LEDs to light specific sections dynamically (e.g., LEDs 7-11) to create a visually appealing response to the detected gesture. Additionally, I addressed power constraints by optimizing brightness levels, balancing energy efficiency with the strip’s aesthetic contribution. Here is the code that I used to realize when the "prayer" gesture is detected, the brightness of the LED strips will change.
 
- <img width="800" alt="p4" src="neopixel.png">
+  <img width="800" alt="p4" src="code1.png">
+
+  <img width="800" alt="p4" src="code2.png">
+
+  <img width="800" alt="p4" src="code3.png">
+
+  <img width="800" alt="p4" src="code4.png">
     
 5. **Flask-Photon Communication Debugging**
     
@@ -31,7 +37,7 @@ This week’s work concentrated on completing the integration of gesture recogni
 
 [![Watch the video](https://img.youtube.com/vi/59HAXbuEiKE/0.jpg)](https://youtube.com/shorts/59HAXbuEiKE)
 
- <img width="800" alt="p4" src="neopixel.png">
+ <img width="800" alt="p4" src="print.png">
     
 **Challenges and Solutions**
 
